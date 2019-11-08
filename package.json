@@ -6,6 +6,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "iclient": "cd frontend && yarn",
+    "iserver": "cd backend && yarn",
+    "setup": "concurrently \"yarn iserver\" \"yarn iclient\"",
     "client": "cd frontend && yarn start",
     "server": "cd backend && yarn start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
