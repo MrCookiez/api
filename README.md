@@ -1,6 +1,6 @@
 #### How to run
 
-1. Type `yarn setup` enter - to install all the node modules
+1. Type `yarn && yarn setup` enter - to install all the node modules
 2. Type `yarn dev` enter - to start the project
 
 #### 1. Admin role
