@@ -1,12 +1,9 @@
 const express = require('express');
-var session = require('express-session');
+const session = require('express-session');
 const db = require('./config/db');
 const router = express.Router();
 const bodyParser = require('body-parser');
 var path = require('path');
-
-// const index = require('./routes/index');
-// const users = require('./routes/users');
 
 // Connect to DataBase
 db.connect((err) => {
@@ -22,6 +19,13 @@ app.use(bodyParser.json());
 app.get('/', (req, res) => {
 	res.sendFile(path.join(__dirname + '/public'));
 });
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+  }))
 
 app.post('/register', (req, res) => {
 	var firstname = req.body.firstname;
@@ -51,42 +55,41 @@ app.get('/welcome', function(request, response) {
 	}
 	response.end();
 });
-// router.get('/', (req, res, next) => {
-//     res.render('index', { title: 'Registration' });
-//   });
-
-// router.get('/register', (req, res, next) => {
-//     console.log(req.body.firstname);
-//     console.log(req.body.lastname);
-//     res.render('index', { title: 'Registration Complete' });
-// });
-
-// Define Routes
-// app.use('/', index);
-// app.use('/users', users);
-
-// Init Middleware
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: false }));
-
-// Create all tables
-// app.get('/api/createalltables', (req, res) => {
-
-//     let createUSERS = 'CREATE TABLE users(id int AUTO_INCREMENT, firstname CHAR(255), lastname CHAR(255), password VARCHAR(255), email VARCHAR(255), PRIMARY KEY(id))';
-//     db.query(createUSERS, (err, result) => {
-//         if (err) throw err;
-//         console.log(result);
-//         res.send('Users table has been created...');
-//     });
-
-//     let createPOSTS = 'CREATE TABLE posts(id int AUTO_INCREMENT, title VARCHAR(255), body VARCHAR(255), PRIMARY KEY(id))';
-//     db.query(createPOSTS, (err, result) => {
-//         if (err) throw err;
-//         console.log(result);
-//         res.send('Posts table has been created...');
-//     });
-// });
 
 app.listen('3001', () => {
     console.log('listening to port 3001 ...');
 });
+
+////////
+
+const express = require('express');
+const connectDB = require('./config/db');
+const path = require('path');
+
+const app = express();
+
+// Connect Database
+connectDB();
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+// Define Routes
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
+app.use('/api/profile', require('./routes/api/profile'));
+app.use('/api/posts', require('./routes/api/posts'));
+
+// Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  // Set static folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
