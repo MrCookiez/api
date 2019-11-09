@@ -1,0 +1,6 @@
+{
+    "getProducts": "api/getproducts/",
+    "addProducts": "api/addproducts/",
+    "removeProducts": "api/removeproducts/",
+    "updateProducts": "api/updateproducts/"
+}
