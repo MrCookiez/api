@@ -12,7 +12,7 @@
     "client": "cd frontend && yarn start",
     "server": "cd backend && yarn start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "nodemon": "nodemon app.js"
+    "nodemon": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
