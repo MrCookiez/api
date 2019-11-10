@@ -6,10 +6,10 @@ const bodyParser = require('body-parser');
 var path = require('path');
 
 // Connect to DataBase
-db.connect((err) => {
-    if (err) throw err;
-    console.log('MySql connected...🔥🔥🔥');
-});
+// db.connect((err) => {
+//     if (err) throw err;
+//     console.log('MySql connected...🔥🔥🔥');
+// });
 
 const app = express();
 
@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 
 
 // Define Routes
+app.use('/api/info', (req, res) => res.send('OK'));
 app.use('/api/register', require('./routes/auth'));
 // app.use(session({
 //     secret: 'keyboard cat',
@@ -26,17 +27,17 @@ app.use('/api/register', require('./routes/auth'));
 //     cookie: { maxAge: 60000 }
 //   }))
 
-app.get('/welcome', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.username + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+// app.get('/welcome', function(request, response) {
+// 	if (request.session.loggedin) {
+// 		response.send('Welcome back, ' + request.session.username + '!');
+// 	} else {
+// 		response.send('Please login to view this page!');
+// 	}
+// 	response.end();
+// });
 
-app.listen('3001', () => {
-    console.log('listening to port 3001 ...');
+app.listen('3002', () => {
+    console.log('listening to port 3002 ...');
 });
 
 // ////////

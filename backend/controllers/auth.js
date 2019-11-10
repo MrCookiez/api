@@ -10,7 +10,11 @@ module.exports = register = async (req, res) => {
     console.log("result should be - `Yoda`");
     const result = await service.register(user);
     console.log(result);
-    return result ? res.redirect('/profile') : res.send('Incorrect firstname and/or Password!');
+    if (result) {
+        res.redirect('/profile');
+    } else {
+        res.send('Incorrect firstname and/or Password!');
+    }
     // req.session.loggedin = true;
     // req.session.firstname = firstname;
 };
