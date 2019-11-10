@@ -10,7 +10,7 @@ const Register = () => (
       <input type='text' name='firstname' />
       <br/>
       <label>Last name:</label>
-      <input type='text' name='firstname' />
+      <input type='text' name='lastname' />
       <br/>
       <label>Email:</label>
       <input type='email' name='email' />
