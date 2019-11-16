@@ -1,20 +1,34 @@
 const service = require('../services/auth');
+const db = require('../config/db');
+
 // Register user
-module.exports = register = async (req, res) => {
+module.exports = register = (req, res) => {
     const user = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        email: req.body.email
     };
-    console.log("result should be - `Yoda`");
-    const result = await service.register(user);
-    console.log(result);
-    if (result) {
-        res.redirect('/profile');
-    } else {
-        res.send('Incorrect firstname and/or Password!');
-    }
+
+    const insertQuery = "INSERT INTO users (firstname, lastname, password, email) VALUES (?, ?, ?, ?)";
+    db.query(insertQuery, [user.firstname, user.lastname, user.password, user.email], (err, result) => {
+        if (err) throw err;
+		res.json('1 record inserted', result);
+    });
+
+    // console.log("Connected!");
+	// const query = "INSERT INTO users (firstname, lastname, password, email) VALUES ('firstnameTEST', 'lastnameTEST', 'passwordTEST', 'email@testemail.com')";
+	// db.query(query, (err, result) => {
+		// if (err) throw err;
+		// console.log("1 record inserted");
+		// console.log(result);
+		// res.json('Done!');
+	// });
+        // if (result) {
+        //     res.redirect('/');
+        // } else {
+        //     res.send('Incorrect firstname and/or Password!');
+        // }
     // req.session.loggedin = true;
     // req.session.firstname = firstname;
 };

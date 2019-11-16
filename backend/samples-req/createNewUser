@@ -1,0 +1,39 @@
+/// Simple User
+{
+    "firstName": "Theo",
+    "lastName": "Vragkos",
+    "password": "4xxxx",
+    "email": "test@email.com",
+    "phone": "6942651889",
+    "area": "Florina",
+    "postcode": "53100",
+    "streetName": "M.Andronikou",
+    "streetNumber": "3",
+    "authorityLevel": "0"
+}
+// Shop Owner
+{
+    "firstName": "Theo",
+    "lastName": "Vragkos",
+    "password": "4xxxx",
+    "email": "test@email.com",
+    "phone": "6942651889",
+    "area": "Florina",
+    "postcode": "53100",
+    "streetName": "M.Andronikou",
+    "streetNumber": "3",
+    "authorityLevel": "1"
+}
+/// Administrator
+{
+    "firstName": "Theo",
+    "lastName": "Vragkos",
+    "password": "superStrongPasswordL1k3iTsh0ulDB3!",
+    "email": "test@email.com",
+    "phone": "6942651889",
+    "area": "Florina",
+    "postcode": "53100",
+    "streetName": "M.Andronikou",
+    "streetNumber": "3",
+    "authorityLevel": "3"
+}

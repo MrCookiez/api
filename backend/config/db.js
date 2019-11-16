@@ -8,4 +8,10 @@ const db  = mysql.createConnection({
     database    : 'nodemysql',
 });
 
+// Connect to DataBase - TEST
+db.connect((err) => {
+    if (err) throw err;
+    console.log('MySql connected...🔥🔥🔥');
+});
+
 module.exports = db;
