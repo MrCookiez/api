@@ -1,5 +1,5 @@
+const passport = require('passport');
 const service = require('../services/auth');
-const db = require('../config/db');
 
 // Register user
 module.exports = register = async (req, res) => {
@@ -20,5 +20,14 @@ module.exports = register = async (req, res) => {
 };
 
 // Login user
-// module.exports = login = (req, res) => {
-//};
+// module.exports = login = async (req, res) => {
+//     const user = {
+//         id: req.body.id,
+//         firstname: req.body.firstname,
+//         lastname: req.body.lastname,
+//         password: req.body.password,
+//         email: req.body.email
+//     };
+
+//     service.login(passport, user);
+// };

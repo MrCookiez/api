@@ -1,5 +1,8 @@
 const db = require('../config/db');
 const bcrypt = require('bcrypt');
+const find = require('./findUserBy');
+
+const localStrategy = require('passport-local').Strategy;
 
 // Register user
 const register = async (user) => {
@@ -13,13 +16,28 @@ const register = async (user) => {
 };
 
 // Login user
-// const login = async (user) => {
-//     if (err) throw err;
-//     console.log(result);
-//     // res.send('New user added to the database!');
-// };
+const login = async (passport, user) => {
+    // const authenticateUser = async (email, password, done) => {
+    //     const foundUser = find.byEmail(email);
+    //     if (foundUser == null) done(null, false, { message: 'No user found with this email' });
 
-const service = { register };
+    //     try {
+    //         if ( await bcrypt.compare(password, user.password)) {
+    //             done(null, foundUser);
+    //         } else {
+    //             done(null, false, { message: 'Incorrect password' });
+    //         }
+    //     } catch (error) {
+    //         return done(error);
+    //     }
+    // };
+
+    // passport.use(new localStrategy({ usernameField: 'email'}, authenticateUser));
+    // passport.serializeUser((user, done) => done(null, user.id));
+    // passport.deserializeUser((id, done) => done());
+};
+
+const service = { register, login };
 
 module.exports = service;
 
