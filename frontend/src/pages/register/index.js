@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Register = () => (
-  <>
+  <div>
     <h2>Register page</h2>
 
-    <form action="/welcome">
+    <form method="POST" action="/welcome">
       <br/>
       <label>First name:</label>
       <input type='text' name='firstname' />
@@ -23,7 +23,7 @@ const Register = () => (
       <br/>
       <input type='submit' value='Submit' />
     </form>
-  </>
+  </div>
 );
 
 export default Register;

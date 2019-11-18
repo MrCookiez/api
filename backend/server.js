@@ -8,14 +8,14 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());
-// app.use(session({
-// 	secret: 'secret',
-// 	resave: false,
-// 	saveUninitialized: false
-// }));
+app.use(session({
+	secret: 'secret',
+	resave: false,
+	saveUninitialized: false
+}));
 
-// app.use(passport.initialize());
-// app.use(passport.session());
+app.use(passport.initialize());
+app.use(passport.session());
 // Define Routes
 app.post('/api/info', (req, res) => res.send('test'));
 app.use('/api/register', require('./routes/auth'));
