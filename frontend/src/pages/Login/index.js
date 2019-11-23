@@ -1,9 +1,10 @@
 import React from 'react';
+import endpoints from '../../config/endpoints.json';
 
 const Login = () => (
     <div>
         <h2>Hello World Login</h2>
-        <form method='POST' action='/login'>
+        <form method='POST' action={endpoints.login}>
             <br/>
             <label>Email:</label>
             <input type='email' name='email' />

@@ -1,4 +1,6 @@
 {
+    "register": "localhost:3001/register",
+    "login": "localhost:3001/login",
     "getProducts": "api/getproducts/",
     "addProducts": "api/addproducts/",
     "removeProducts": "api/removeproducts/",
