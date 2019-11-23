@@ -12,7 +12,6 @@ const register = async (req, res) => {
 
     try {
         service.register(user);
-        if (user) res.send('New user added to the database!');
         res.redirect('/login');
     } catch (error) {
         res.redirect('/register');
