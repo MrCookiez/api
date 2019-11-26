@@ -6,8 +6,8 @@ const register = async (req, res) => {
     const user = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
+        email: req.body.email,
         password: req.body.password,
-        email: req.body.email
     };
 
     try {
@@ -21,14 +21,13 @@ const register = async (req, res) => {
 // Login user
 const login = async (req, res) => {
     const user = {
-        id: req.body.id,
+        email: req.body.email,
         password: req.body.password,
-        email: req.body.email
     };
 
     service.login(passport, user);
 };
 
-const controllers = { register, login };
+const controllers = { login, register };
 
 module.exports = controllers;

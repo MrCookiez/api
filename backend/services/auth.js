@@ -1,7 +1,9 @@
+var passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
 const db = require('../config/db');
+const findEmail = require('./findUser').byEmail;
+const findPassword = require('./findUser').getPasswordByEmail;
 const bcrypt = require('bcrypt');
-const find = require('./findUserBy');
-const localStrategy = require('passport-local').Strategy;
 
 // Register user
 const register = async (user) => {
@@ -20,21 +22,56 @@ const register = async (user) => {
                 console.log('\n DONE BABY RESULTS: => ', result);
                 console.log('\n DONE BABY ROWS: => ', rows);
             });
-        } else {
-            console.log('\n This email not valid! ROWS: => ', rows);
+        } if (rows.email === `${user.email}`) {
+            console.log('\n This email is not valid! Existed one: => ', rows.email);
         }
     });
 };
 
-// Authenticate - Login user
+// Authenticate - Login user // initialize function
 const login = async (passport, user) => {
-    await db.query("SELECT * FROM users WHERE email = ? ", [user.email], (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        return result;
-    });
+    const dbEmail = findEmail(user.email);
+
+    if (dbEmail === null) done(null, false, console.log('No user found'))
+
+    const dbPassword = findPassword(dbEmail);
+
+    try {
+        if (await bcrypt.compare(dbPassword, user.password)) {
+            console.log('user => => =>', user)
+            return done(null, user)
+        } else {
+            console.log('Password incorrect');
+            return done(null, false, 'Password incorrect');
+        }
+    } catch (error) {
+        console.log('<== ERROR ERROR ERROR ==>');
+        return done(error);
+    }
+
+    // await db.query("SELECT * FROM users WHERE email = ? ", [user.email], (err, rows, fields, result) => {
+    //     if (err) throw err;
+    //     console.log('fields BABE!!! ======>: ', fields);
+    //     return result;
+    // });
 };
 
 const service = { register, login };
 
 module.exports = service;
+
+
+// passport.use(new LocalStrategy(
+//     function(username, password, done) {
+//       User.findOne({ username: username }, function(err, user) {
+//         if (err) { return done(err); }
+//         if (!user) {
+//           return done(null, false, { message: 'Incorrect username.' });
+//         }
+//         if (!user.validPassword(password)) {
+//           return done(null, false, { message: 'Incorrect password.' });
+//         }
+//         return done(null, user);
+//       });
+//     }
+//   ));
