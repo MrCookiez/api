@@ -1,4 +1,4 @@
-const service = require('../services/create');
+const service = require('../services/setup/create');
 
 // Create product table
 const create = async (req, res) => {
