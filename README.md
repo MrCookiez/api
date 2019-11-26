@@ -1,4 +1,19 @@
-#### How to run
+# florinafood.gr
+Local Delivery and Food Guide
+
+### INSTALL PROJECT
+
+1. `git clone -project-url- `
+2. `yarn install`
+3. `yarn start`
+
+### BUILD WITH
+* MySQL
+* Express JS
+* React JS
+* Node JS
+
+### INSTALL && RUN PROJECT
 
 1. Type `yarn && yarn setup` enter - to install all the node modules
 2. Type `yarn dev` enter - to start the project
