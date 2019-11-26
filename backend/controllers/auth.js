@@ -1,5 +1,5 @@
 const passport = require('passport');
-const service = require('../services/auth');
+const service = require('../services/user/auth');
 
 // Register user
 const register = async (req, res) => {

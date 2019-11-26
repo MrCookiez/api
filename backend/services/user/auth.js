@@ -1,8 +1,8 @@
 var passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
-const db = require('../config/db');
-const findEmail = require('./findUser').byEmail;
-const findPassword = require('./findUser').getPasswordByEmail;
+const db = require('../../config/db');
+const findEmail = require('../findUser').byEmail;
+const findPassword = require('../findUser').getPasswordByEmail;
 const bcrypt = require('bcrypt');
 
 // Register user
@@ -20,15 +20,13 @@ const register = async (user) => {
             await db.query(insertQuery, [user.firstname, user.lastname, hashedPassword, user.email], (err, result) => {
                 if (err) throw err;
                 console.log('\n DONE BABY RESULTS: => ', result);
-                console.log('\n DONE BABY ROWS: => ', rows);
             });
-        } if (rows.email === `${user.email}`) {
-            console.log('\n This email is not valid! Existed one: => ', rows.email);
         }
+        // @TODO: Need to add 'else' case which will display an error message
     });
 };
 
-// Authenticate - Login user // initialize function
+// Authenticate - Login user
 const login = async (passport, user) => {
     const dbEmail = findEmail(user.email);
 
@@ -45,15 +43,9 @@ const login = async (passport, user) => {
             return done(null, false, 'Password incorrect');
         }
     } catch (error) {
-        console.log('<== ERROR ERROR ERROR ==>');
+        console.log('<== ERROR - ERROR - ERROR ==>');
         return done(error);
     }
-
-    // await db.query("SELECT * FROM users WHERE email = ? ", [user.email], (err, rows, fields, result) => {
-    //     if (err) throw err;
-    //     console.log('fields BABE!!! ======>: ', fields);
-    //     return result;
-    // });
 };
 
 const service = { register, login };
