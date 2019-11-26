@@ -1,5 +1,5 @@
 const service = require('../../services/products/anytime');
-
+const db = require('../../config/db'); //*** REMOVE LATER */
 // Add new product
 const addProduct = async (req, res) => {
     const product = {
@@ -13,13 +13,34 @@ const addProduct = async (req, res) => {
     };
 
     try {
-        service.addProduct(product)
-        res.redirect('/products');
+        service.addProduct(product);
+        res.send('Product added');
     } catch (error) {
         res.redirect('/register');
     }
 };
 
-const controllers = { addProduct };
+// Get all products
+const getProducts = async (req, res) => {
+    // try {
+    //     res.send(service.getProducts());
+    // } catch (error) {
+    //     res.send('Still not working');
+    //     res.redirect('/register');
+    // }
+    try {
+        await db.query('SELECT * FROM anytime_products', (err, result, rows) => {
+            if (err) { throw err };
+            const tetete =  JSON.stringify(result);
+            console.log('rows ====>', tetete);
+            res.send(tetete);
+            return JSON.stringify(result);
+        });
+    } catch (error) {
+        res.send(`Still not working, ${error}`);
+        res.redirect('/register');
+    }
+};
+const controllers = { addProduct, getProducts };
 
 module.exports = controllers;
