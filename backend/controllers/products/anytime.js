@@ -22,6 +22,7 @@ const addProduct = async (req, res) => {
 
 // Get all products
 const getProducts = async (req, res) => {
+    // @TODO: Check why is not working (looks like it is async/await related)
     // try {
     //     res.send(service.getProducts());
     // } catch (error) {
@@ -29,18 +30,16 @@ const getProducts = async (req, res) => {
     //     res.redirect('/register');
     // }
     try {
-        await db.query('SELECT * FROM anytime_products', (err, result, rows) => {
+        await db.query('SELECT * FROM anytime_products', (err, result) => {
             if (err) { throw err };
-            const tetete =  JSON.stringify(result);
-            console.log('rows ====>', tetete);
-            res.send(tetete);
-            return JSON.stringify(result);
+            res.json(result);
         });
     } catch (error) {
         res.send(`Still not working, ${error}`);
         res.redirect('/register');
     }
 };
+
 const controllers = { addProduct, getProducts };
 
 module.exports = controllers;

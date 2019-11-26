@@ -19,15 +19,15 @@ const addProduct = async (product) => {
 };
 
 // Get all products
-const getProducts = async () => {
-    const insertQuery = `SELECT * FROM ${shopName}_products`;
-    const check = await db.query(insertQuery, (err, result, rows) => {
-        if (err) throw err;
-        console.log('rows ====>', JSON.stringify(result));
-        return JSON.stringify(result);
-    });
-    return check;
-};
+// const getProducts = async () => {
+//     let data;
+//     await db.query('SELECT * FROM anytime_products', (err, result, rows) => {
+//         if (err) { throw err };
+//         data = JSON.stringify(result);
+//         console.log('rows ====>', data);
+//     });
+//     return data;
+// };
 
 // Update product
 const updateProduct = async (product) => {};
