@@ -1,12 +1,6 @@
 # florinafood.gr
 Local Delivery and Food Guide
 
-### INSTALL PROJECT
-
-1. `git clone -project-url- `
-2. `yarn install`
-3. `yarn start`
-
 ### BUILD WITH
 * MySQL
 * Express JS
