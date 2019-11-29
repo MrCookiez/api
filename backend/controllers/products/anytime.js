@@ -13,7 +13,7 @@ const addProduct = async (req, res) => {
     };
 
     try {
-        service.addProduct(product);
+        await service.addProduct(product);
         res.send('Product added');
     } catch (error) {
         res.redirect('/register');
