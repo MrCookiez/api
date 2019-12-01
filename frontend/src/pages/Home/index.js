@@ -1,28 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useAxios from 'axios-hooks';
+import endpoint from '../../config/endpoint.json';
 
 const Home = () => {
-  const [hasError, setErrors] = useState(false);
-  const [products, setProducts] = useState({});
+    const [{ data, loading, error }, refetch] = useAxios(
+        endpoint.getProducts,
+    );
 
-  async function fetchData() {
-    const res = await fetch("http://localhost:3001/api/anytime/getProducts");
-    res
-      .json()
-      .then(res => setProducts(res))
-      .catch(err => setErrors(err));
-  }
+    return (
+        <div>
+            <button onClick={refetch}>refetch</button>
+            <hr />
 
-  useEffect(() => {
-    fetchData();
-  });
+            {loading && <p>Loading...</p>}
+            {error && <p>Error...{console.log('error', error)}</p>}
+            {data && console.log('data ==>', data[0])}
 
-  return (
-    <div>
-      <span>{JSON.stringify(products)}</span>
-      <hr />
-      <span>Has error: {JSON.stringify(hasError)}</span>
-    </div>
-  );
+            <pre>{data && data.map(item => <h3>{item.name}</h3>)}</pre>
+        </div>
+    );
 };
 
 export default Home;

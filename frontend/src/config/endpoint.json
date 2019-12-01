@@ -1,0 +1,8 @@
+{
+    "register": "/api/register",
+    "login": "api/login",
+    "getProducts": "api/anytime/getProducts",
+    "addProducts": "api/addProduct/",
+    "removeProducts": "api/removeProducts/",
+    "updateProducts": "api/updateProducts/"
+}

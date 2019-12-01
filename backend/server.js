@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
+const cors = require('cors');
 // const initialize = require('./services/passport-config');
 // Authentication & Login & Sessions config
 
@@ -10,6 +11,8 @@ const passport = require('passport');
 var path = require('path');
 
 const app = express();
+// = Access-Control-Allow-Origin =
+app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended : true }));
 app.use(bodyParser.json());

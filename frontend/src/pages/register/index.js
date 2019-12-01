@@ -1,11 +1,11 @@
 import React from 'react';
-import endpoints from '../../config/endpoints.json';
+import endpoint from '../../config/endpoint.json';
 
 const Register = () => (
   <div>
     <h2>Register page</h2>
-
-    <form method="POST" action={endpoints.register}>
+    {/* action={endpoint.register} */}
+    <form method="POST" >
       <br/>
       <label>First name:</label>
       <input type='text' name='firstname' />
