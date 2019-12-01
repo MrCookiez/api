@@ -15,7 +15,7 @@ const addProduct = async (req, res) => {
 
     try {
         await service.addProduct(product)
-        .then(result => res.send(result)),
+        .then(res.send('New product successfully added!')),
         (error) => res.send(error);
     } catch (error) {
         res.redirect('/register');
