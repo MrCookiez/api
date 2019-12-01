@@ -1,5 +1,8 @@
 const db = require('../../config/db');
 const shopName = 'anytime';
+const q = require('q');
+
+const deferred = q.defer();
 
 // Add new product
 const addProduct = async (product) => {
@@ -13,21 +16,20 @@ const addProduct = async (product) => {
         product.offer,
         product.availability
     ], (err, result) => {
-        if (err) throw err;
-        return result;
-    });
+        if (err) throw deferred.reject(err)
+        deferred.resolve(result);
+});
+    return  deferred.promise;
 };
 
 // Get all products
-// const getProducts = async () => {
-//     let data;
-//     await db.query('SELECT * FROM anytime_products', (err, result, rows) => {
-//         if (err) { throw err };
-//         data = JSON.stringify(result);
-//         console.log('rows ====>', data);
-//     });
-//     return data;
-// };
+const getProducts = async () => {
+    await db.query(`SELECT * FROM ${shopName}_products`, (err, result, rows) => {
+        if (err) throw deferred.reject(err)
+        deferred.resolve(result);
+    });
+    return deferred.promise;
+};
 
 // Update product
 const updateProduct = async (product) => {};
@@ -35,6 +37,6 @@ const updateProduct = async (product) => {};
 // Delete product
 const deleteProduct = async (product) => {};
 
-const service = { addProduct, updateProduct, deleteProduct, getProducts };
+const service = { addProduct, getProducts, updateProduct, deleteProduct };
 
 module.exports = service;
