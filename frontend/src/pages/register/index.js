@@ -4,8 +4,7 @@ import endpoint from '../../config/endpoint.json';
 const Register = () => (
   <div>
     <h2>Register page</h2>
-    {/* action={endpoint.register} */}
-    <form method="POST" >
+    <form method="POST" action={endpoint.register}>
       <br/>
       <label>First name:</label>
       <input type='text' name='firstname' />

@@ -4,8 +4,7 @@ import endpoint from '../../config/endpoint.json';
 const Login = () => (
     <div>
         <h2>Hello World Login</h2>
-        {/* action={endpoint.login} */}
-        <form method='POST' > 
+        <form method='POST' action={endpoint.login}>
             <br/>
             <label>Email:</label>
             <input type='email' name='email' />

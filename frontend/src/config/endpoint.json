@@ -1,6 +1,7 @@
 {
     "register": "/api/register",
     "login": "api/login",
+    "get_all_users": "api/users",
     "getProducts": "api/anytime/getProducts",
     "addProducts": "api/addProduct/",
     "removeProducts": "api/removeProducts/",
