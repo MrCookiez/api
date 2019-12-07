@@ -2,7 +2,12 @@ import React from "react";
 import useAxios from 'axios-hooks';
 import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
-import * as styles from './styles';
+import Card from '../../components/Card';
+// import io from 'socket.io-client';
+// import * as styles from './styles';
+
+// const socket = io(endpoint.proxy);
+// console.log('proxy', endpoint.proxy);
 
 const Home = ({ color }) => {
     const [{ data, loading, error }, refetch] = useAxios(
@@ -16,15 +21,19 @@ const Home = ({ color }) => {
 
             {loading && <p>Loading...</p>}
             {error && <p>Error... {console.log('Error => ', error)}</p>}
-            {/* <pre>{data && data.map(item => <h3>{item.name}</h3>)}</pre> */}
             <>
-            {data && data.map(item =>
-                <div css={styles.card}>
-                    <div className='name' color='red'>{item.name}</div>
-                    <div className='price'>{item.price}</div>
-                    <div className='description'>{item.description}</div>
-                </div>
-             )}
+                {data && data.map(item =>
+                    <Card
+                        key={item.id}
+                        name={item.name}
+                        description={item.description}
+                        price={item.price}
+                        category={item.category}
+                        subCategory={item.sub_category}
+                        availability={item.availability}
+                        offer={item.offer}
+                    />
+                )}
              </>
         </div>
     );

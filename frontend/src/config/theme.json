@@ -1,0 +1,15 @@
+{
+    "colors": {
+        "red": "#c82333",
+        "dark": "#222222",
+        "gray": "#e7e8ea",
+        "white": "#fafafa"
+    },
+    "spacing": {
+        "xs": 8,
+        "sm": 16,
+        "md": 24,
+        "lg": 32,
+        "el": 40
+    }
+}

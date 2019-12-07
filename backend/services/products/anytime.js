@@ -24,7 +24,7 @@ const addProduct = async (product) => {
 
 // Get all products
 const getProducts = async () => {
-    await db.query(`SELECT * FROM ${shopName}_products`, (err, result, rows) => {
+    await db.query(`SELECT * FROM ${shopName}_products`, (err, result) => {
         if (err) throw deferred.reject(err)
         deferred.resolve(result);
     });

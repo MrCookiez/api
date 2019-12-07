@@ -1,5 +1,4 @@
 const service = require('../../services/products/anytime');
-const db = require('../../config/db'); //*** REMOVE LATER */
 
 // Add new product
 const addProduct = async (req, res) => {
