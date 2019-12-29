@@ -1,15 +1,19 @@
 {
     "colors": {
         "red": "#c82333",
-        "dark": "#222222",
+        "green": "#228b22",
+        "light": "#fafafa",
         "gray": "#e7e8ea",
-        "white": "#fafafa"
+        "dark": "#222222"
     },
     "spacing": {
         "xs": 8,
         "sm": 16,
         "md": 24,
         "lg": 32,
-        "el": 40
+        "xl": 40
+    },
+    "shadow": {
+        "box": "0 0 15px rgba(0,0,0,.1)"
     }
 }

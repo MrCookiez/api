@@ -3,7 +3,7 @@ import useAxios from 'axios-hooks';
 import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
 import Card from '../../components/Card';
-// import io from 'socket.io-client';
+import io from 'socket.io-client';
 // import * as styles from './styles';
 
 // const socket = io(endpoint.proxy);
@@ -13,6 +13,8 @@ const Home = ({ color }) => {
     const [{ data, loading, error }, refetch] = useAxios(
         endpoint.getProducts,
     );
+
+    if (!loading) io('http://localhost:3001/')
 
     return (
         <div color={color} >

@@ -3,6 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const cors = require('cors');
+
 // const initialize = require('./services/passport-config');
 // Authentication & Login & Sessions config
 
@@ -36,6 +37,12 @@ app.use('/api/login', require('./routes/auth'));
 app.use('/api/anytime/addProduct', require('./routes/products'));
 app.use('/api/anytime/getProducts', require('./routes/products'));
 
-app.listen('3001', () => {
-    console.log('listening to port 3001 ...');
+const server = app.listen(3001);
+const io = require('./socket').init(server);
+
+io.on('connection', socket => {
+    console.log('client connected');
 });
+// app.listen('3001', () => {
+//     console.log('listening to port 3001 ...');
+// });

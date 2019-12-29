@@ -2,27 +2,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
-import { getDefaultImg } from '../../utils';
+// import { } from '../../utils';
+import defaultImgs from './img';
 import * as styles from './styles';
 
 const Card = ({ img, name, description, price, availability, offer }) => (
     availability
     ? (
-        <div css={styles.wrapper}>
-            {offer === 1 && (
+        <form css={styles.wrapper}>
+            {/* {offer === 1 && (
                 <div css={styles.offer}>
                     <span>OFFER</span>
                 </div>
-            )}
+            )} */}
             <div css={styles.container}>
-                {<img src={img ? img : getDefaultImg()} alt="food picture"/>}
-                <div>
-                    {name}
-                    {description}
-                    {price}
+                {/* <img css={styles.image} src={defaultImgs.burger} alt="food picture"/> */}
+                <div css={styles.image} bgImage={defaultImgs.burger} alt="product picture" />
+                <div css={styles.body}>
+                    <div className='product-headline'>
+                        <span className='product-name'>{name}</span>
+                        <span className='product-price'>{price.toFixed(2)}€</span>
+                    </div>
+                    <span className='product-description'>{description}</span>
+                    {!!offer && <span className='product-offer'>Offer</span>}
+                    <div className='product-footer'>
+                        <input type="number" placeholder='1' name="quantity" min="1" max="10" />
+                        <button type='submit'>Προσθηκη</button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     ) : (
         <div css={styles.wrapper}>
             {img && <img src={img} alt="food picture"/>}

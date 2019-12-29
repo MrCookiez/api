@@ -1,4 +1,5 @@
 const service = require('../../services/products/anytime');
+const socket = require('../../socket');
 
 // Add new product
 const addProduct = async (req, res) => {
@@ -14,7 +15,8 @@ const addProduct = async (req, res) => {
 
     try {
         await service.addProduct(product)
-        .then(res.send('New product successfully added!')),
+        .then(
+            res.send('New product successfully added!')),
         (error) => res.send(error);
     } catch (error) {
         res.redirect('/register');

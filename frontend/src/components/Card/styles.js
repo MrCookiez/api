@@ -1,65 +1,119 @@
 import { css } from 'styled-components';
 import theme from '../../config/theme.json';
+import { minMediaQuery } from '../../config/grid';
 
 export const wrapper = css`
-    padding: ${theme.spacing.lg}px;
-    border: 2px solid ${theme.colors.red};
     position: relative;
     /* adjust later */
-    max-width: 600px;
-    height: 150px;
-    background: #fff;
-    box-shadow: 0 0 15px rgba(0,0,0,.1);
-`;
+    background-color: white;
+    margin: ${theme.spacing.lg}px  auto;
+    box-shadow: ${theme.shadow.box};
+    box-sizing: border-box;
+    transition: box-shadow .2s ease-in-out;
 
-export const offer = css`
-    color: ${theme.colors.white};
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    border-top-color: transparent;
-    border-left-color: transparent;
-
-    &::before, &::after {
-        position: absolute;
-        z-index: -1;
-        content: '';
-        display: block;
-        border: 5px solid ${theme.colors.red};
-    }
-
-    &::before {
-        top: 0;
-        right: 0;
-    }
-
-    &::after {
-        bottom: 0;
-        left: 0;
-    }
-
-    span {
-        position: absolute;
-        display: block;
-        width: 225px;
-        padding: 15px 0;
-        background-color: ${theme.colors.red};
-        box-shadow: 0 5px 10px rgba(0,0,0,.1);
-        color: #fff;
-        font: 700 18px/1 'Lato', sans-serif;
-        text-shadow: 0 1px 1px rgba(0,0,0,.2);
-        text-transform: uppercase;
-        text-align: center;
-        right: -25px;
-        top: 30px;
-        transform: rotate(-45deg);
+    :hover {
+        box-shadow: none;
     }
 `;
 
 export const body = css`
+    display: flex;
+    flex-direction: column;
+    padding: ${theme.spacing.lg}px;
+    width: 100%;
+    position: relative;
 
+    ::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -10px;
+        width: 25px;
+        height: 100%;
+        background-color: white;
+        transform: skewX(-3deg);
+    }
+
+    .product-headline {
+        display: inline-flex;
+        border: 2px solid ${theme.colors.light};
+        border-left: none;
+        justify-content: space-between;
+
+        span {
+            padding: ${theme.spacing.sm}px;
+        }
+    }
+
+    .product-description {
+        margin: ${theme.spacing.sm}px 0;
+        padding: 0 ${theme.spacing.sm}px;
+    }
+
+    .product-name {
+        font-weight: bold;
+    }
+
+    .product-price {
+        color: ${theme.colors.green};
+        background-color: transparent;
+        align-self: center;
+
+        ${minMediaQuery('md')} {
+            background-color: ${theme.colors.light};
+        }
+    }
+
+    .product-offer {
+        display: flex;
+        align-self: flex-start;
+        font-size: 12px;
+        margin: 0 ${theme.spacing.sm}px;
+        padding: ${theme.spacing.xs / 1.5}px;
+        text-transform: uppercase;
+        color: ${theme.colors.light};
+        background-color: ${theme.colors.red};
+        border-radius: 2px;
+    }
+
+    .product-footer {
+        display: flex;
+        justify-content: space-between;
+        margin: ${theme.spacing.sm}px 0;
+        padding: 0 0 0 ${theme.spacing.sm}px;
+
+        button {
+            border: none;
+            border-radius: 2px;
+            color: ${theme.colors.light};
+            background-color: ${theme.colors.green};
+            padding: ${theme.spacing.xs}px;
+            text-transform: uppercase;
+            transition: .2s ease-in-out;
+
+            :hover {
+                cursor: pointer;
+                box-shadow: ${theme.shadow.box};
+            }
+        }
+    }
+`;
+
+export const container = css`
+    display: flex;
+`;
+
+export const image = css`
+    display: block;
+    width: 200px;
+    min-height: 200px;
+    background-image: ${({ bgImage }) => `url(${bgImage})`};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    ${minMediaQuery('md')} {
+        width: 300px;
+    }
 `;
 
