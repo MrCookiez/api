@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import ProfileUser from './pages/ProfileUser';
-// import ProfileOwner from './pages/ProfileOwner';
-// import ProfileAdmin from './pages/ProfileAdmin';
-import Register from './pages/Register';
-import Login from './pages/Login';
-import Home from './pages/Home';
+import routes from './config/routes.js';
 
 class App extends Component {
   render() {
@@ -13,9 +8,14 @@ class App extends Component {
         <BrowserRouter>
         <div className="App">
               <Switch>
-                <Route path='/' component={Home} exact />
-                <Route path='/login' component={Login} />
-                <Route path='/register' component={Register} />
+                {routes.map((route => (
+                  <Route
+                    exact
+                    key={route.name}
+                    path={route.path}
+                    component={route.component}
+                  />
+                )))}
               </Switch>
         </div>
         </BrowserRouter>
