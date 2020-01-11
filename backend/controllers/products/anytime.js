@@ -1,5 +1,4 @@
 const service = require('../../services/products/anytime');
-const db = require('../../config/db'); //*** REMOVE LATER */
 
 // Add new product
 const addProduct = async (req, res) => {
@@ -15,7 +14,9 @@ const addProduct = async (req, res) => {
 
     try {
         await service.addProduct(product)
-        .then(res.send('New product successfully added!')),
+        .then(
+            res.send('New product successfully added!')
+        ),
         (error) => res.send(error);
     } catch (error) {
         res.redirect('/register');
