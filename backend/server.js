@@ -37,12 +37,6 @@ app.use('/api/login', require('./routes/auth'));
 app.use('/api/anytime/addProduct', require('./routes/products'));
 app.use('/api/anytime/getProducts', require('./routes/products'));
 
-const server = app.listen(3001);
-const io = require('./socket').init(server);
-
-io.on('connection', socket => {
-    console.log('client connected');
+app.listen('3001', () => {
+    console.log('listening to port 3001 ...');
 });
-// app.listen('3001', () => {
-//     console.log('listening to port 3001 ...');
-// });
