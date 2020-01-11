@@ -45,13 +45,13 @@ export const body = css`
         }
     }
 
+    .product-name {
+        font-weight: bold;
+    }
+
     .product-description {
         margin: ${theme.spacing.sm}px 0;
         padding: 0 ${theme.spacing.sm}px;
-    }
-
-    .product-name {
-        font-weight: bold;
     }
 
     .product-price {
@@ -82,11 +82,25 @@ export const body = css`
         margin: ${theme.spacing.sm}px 0;
         padding: 0 0 0 ${theme.spacing.sm}px;
 
-        button {
+        /** Remove the arrows from the input cross browser */
+        input[type="number"] {
+            -webkit-appearance: textfield;
+            -moz-appearance: textfield;
+            appearance: textfield;
+            padding: ${theme.spacing.sm / 2}px;
+            text-align: center;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+
+        .add-product {
             border: none;
             border-radius: 2px;
             color: ${theme.colors.light};
-            background-color: ${theme.colors.green};
+            background-color: ${theme.colors.lightGreen};
             padding: ${theme.spacing.xs}px;
             text-transform: uppercase;
             transition: .2s ease-in-out;
@@ -94,6 +108,7 @@ export const body = css`
             :hover {
                 cursor: pointer;
                 box-shadow: ${theme.shadow.box};
+                background-color: ${theme.colors.green};
             }
         }
     }

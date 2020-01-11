@@ -14,7 +14,12 @@ const Home = ({ color }) => {
         endpoint.getProducts,
     );
 
-    if (!loading) io('http://localhost:3001/')
+    const socket = io('http://localhost:3001/');
+    // if (!loading) { return socket.on('product'), data => {
+    //     if (data.action === 'product') {
+    //         console.log('=====> ', data.product);
+    //     }
+    // } }
 
     return (
         <div color={color} >

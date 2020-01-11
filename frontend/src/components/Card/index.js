@@ -2,21 +2,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
-// import { } from '../../utils';
 import defaultImgs from './img';
 import * as styles from './styles';
 
-const Card = ({ img, name, description, price, availability, offer }) => (
-    availability
-    ? (
+const Card = ({ img, name, description, price, availability, offer }) => {
+    return availability && (
         <form css={styles.wrapper}>
-            {/* {offer === 1 && (
-                <div css={styles.offer}>
-                    <span>OFFER</span>
-                </div>
-            )} */}
             <div css={styles.container}>
-                {/* <img css={styles.image} src={defaultImgs.burger} alt="food picture"/> */}
                 <div css={styles.image} bgImage={defaultImgs.burger} alt="product picture" />
                 <div css={styles.body}>
                     <div className='product-headline'>
@@ -26,19 +18,14 @@ const Card = ({ img, name, description, price, availability, offer }) => (
                     <span className='product-description'>{description}</span>
                     {!!offer && <span className='product-offer'>Offer</span>}
                     <div className='product-footer'>
-                        <input type="number" placeholder='1' name="quantity" min="1" max="10" />
-                        <button type='submit'>Προσθηκη</button>
+                        <input type="number" placeholder='0' name="quantity" min="1" max="10" />
+                        <button className='add-product' type='submit'>Προσθηκη</button>
                     </div>
                 </div>
             </div>
         </form>
-    ) : (
-        <div css={styles.wrapper}>
-            {img && <img src={img} alt="food picture"/>}
-            {name} is out of order
-        </div>
-    )
-);
+    );
+};
 
 Card.defaultProps = {
     img: '',
@@ -54,10 +41,10 @@ Card.propTypes = {
     description: PropTypes.string.isRequired,
     /** Product price (decimal number) */
     price: PropTypes.number.isRequired,
-     /** When false, product will be disabled */
-    availability: PropTypes.bool,
-    /** When true, offer label will be displayed on the product */
-    offer: PropTypes.bool,
+     /** When 0, product will be disabled */
+    availability: PropTypes.number,
+    /** When 1, offer label will be displayed on the product */
+    offer: PropTypes.number,
 };
 
 export default Card;

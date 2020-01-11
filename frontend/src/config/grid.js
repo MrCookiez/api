@@ -27,6 +27,9 @@ export const minMediaQuery = (str) => {
         case 'lg':
             mediaQuery = `@media (min-width: ${breakpoints.min.lg}px)`;
             break;
+        default:
+            mediaQuery = '';
+            break;
     };
 
     return mediaQuery;
