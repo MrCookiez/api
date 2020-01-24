@@ -1,17 +1,31 @@
-const mysql = require('mysql');
+const Sequelize = require('sequelize');
 
-// Create connection
-const db  = mysql.createConnection({
-    host        : 'localhost',
-    user        : 'root',
-    password    : '',
-    database    : 'nodemysql',
-});
+const sequelize = new Sequelize(
+    'nodemysql',
+    'root',
+    '',
+    {
+        dialect: 'mysql',
+        host: 'localhost'
+    }
+);
 
-// Connect to DataBase - TEST
-db.connect((err) => {
-    if (err) throw err;
-    console.log('MySql connected...🔥🔥🔥');
-});
+module.exports = sequelize;
 
-module.exports = db;
+// const mysql = require('mysql');
+
+// // Create connection
+// const db  = mysql.createConnection({
+//     host        : 'localhost',
+//     user        : 'root',
+//     password    : '',
+//     database    : 'nodemysql',
+// });
+
+// // Connect to DataBase - TEST
+// db.connect((err) => {
+//     if (err) throw err;
+//     console.log('MySql connected...🔥🔥🔥');
+// });
+
+// module.exports = db;
