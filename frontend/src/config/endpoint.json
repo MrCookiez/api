@@ -3,7 +3,7 @@
     "register": "/api/register",
     "login": "api/login",
     "get_all_users": "api/users",
-    "getProducts": "api/anytime/getProducts",
+    "getProducts": "/products",
     "addProducts": "api/addProduct/",
     "removeProducts": "api/removeProducts/",
     "updateProducts": "api/updateProducts/"

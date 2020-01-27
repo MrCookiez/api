@@ -7,7 +7,7 @@ import Card from '../../components/Card';
 
 const Home = ({ color }) => {
     const [{ data, loading, error }, refetch] = useAxios(
-        endpoint.getProducts,
+        `${endpoint.proxy}`,
     );
 
     return (

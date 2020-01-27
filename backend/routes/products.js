@@ -1,24 +1,12 @@
-// const express = require('express');
-// const controllers = require('../controllers/products/anytime');
-
-// const router = express.Router();
-
-// router.post('/', controllers.addProduct);
-// router.get('/', controllers.getProducts);
-
-// module.exports = router;
 
 const express = require('express');
 const router = express.Router();
-const db = require('../config/db');
-const Product = require('../models/Product');
+const controllers = require('../controllers/products');
 
-router.get('/', (req, res) =>
-    Product.findAll()
-    .then(products => {
-        console.log(products);
-        res.sendStatus(200);
-    })
-    .catch(error => console.log(error)));
+router.get('/', controllers.getProducts);
+router.post('/add', controllers.addProduct);
+
+// router.update('/', controllers.updateProduct); UPDATE
+// router.delete('/', controllers.deleteProduct); DELETE
 
 module.exports = router;

@@ -38,16 +38,16 @@ app.use(bodyParser.json());
 // app.use('/api/register', require('./routes/auth'));
 // app.use('/api/login', require('./routes/auth'));
 // // = Products =
-// app.use('/api/anytime/addProduct', require('./routes/products'));
-// app.use('/api/anytime/getProducts', require('./routes/products'));
 app.use('/', require('./routes/products'));
+app.use('/add', require('./routes/products'));
 
 const PORT = process.env.PORT || 3001;
 
 sequelize.sync()
-    .then(result => {
+    .then(
+        result => {
         console.log(`MySql connected... 🔥🔥🔥 on port ${PORT}`, result);
         app.listen(PORT);
-    }).catch(err => {
-        console.log('😞', err);
-    });
+    }).catch(
+        err => { console.log('😞', err)}
+    );
