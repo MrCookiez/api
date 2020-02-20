@@ -1,10 +1,12 @@
+
 const express = require('express');
-const controllers = require('../controllers/products/anytime');
-
 const router = express.Router();
+const controllers = require('../controllers/products');
 
-router.post('/', controllers.addProduct);
 router.get('/', controllers.getProducts);
+router.post('/add', controllers.addProduct);
+
+// router.update('/', controllers.updateProduct); UPDATE
+// router.delete('/', controllers.deleteProduct); DELETE
 
 module.exports = router;
-

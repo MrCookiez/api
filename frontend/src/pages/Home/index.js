@@ -4,14 +4,15 @@ import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
 import Card from '../../components/Card';
 // import * as styles from './styles';
+import Layout from '../../layout/Basic';
 
 const Home = ({ color }) => {
     const [{ data, loading, error }, refetch] = useAxios(
-        endpoint.getProducts,
+        `${endpoint.proxy}`,
     );
 
     return (
-        <div color={color} >
+        <Layout color={color} >
             <button onClick={refetch}>refetch</button>
             <hr />
 
@@ -31,7 +32,7 @@ const Home = ({ color }) => {
                     />
                 )}
              </>
-        </div>
+        </Layout>
     );
 };
 
