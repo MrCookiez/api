@@ -1,8 +1,9 @@
 import React from 'react';
 import endpoint from '../../config/endpoint.json';
+import Layout from '../../layout/Basic';
 
 const Register = () => (
-  <div>
+  <Layout>
     <h2>Register page</h2>
     <form method="POST" action={endpoint.register}>
       <br/>
@@ -23,7 +24,7 @@ const Register = () => (
       <br/>
       <input type='submit' value='Submit' />
     </form>
-  </div>
+  </Layout>
 );
 
 export default Register;

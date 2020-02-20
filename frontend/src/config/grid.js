@@ -1,31 +1,38 @@
 /**
- * More information: https://uxplanet.org/responsive-design-best-practices-c6d3f5fd163b
- * Currently the idea is to keep things simple and use 3 breakpoints ( mobile, tablet, desktop )
+ * More information:
+ * 1. https://uxplanet.org/responsive-design-best-practices-c6d3f5fd163b
+ * 2. https://material.io/design/layout/responsive-layout-grid.html#breakpoints
  */
-const breakpoints = {
-    min: {
-        sm: 320,
-        md: 720,
-        lg: 1024,
-    }
-}
+export const breakpoints = {
+    xs: 360,
+    sm: 600,
+    md: 840,
+    lg: 1280,
+    xl: 1440,
+};
 
 /**
- * @param {String} - get a string
- * returns a min media query string
+ * @param {String} -> minimum screen size
+ * @returns {String} -> css media query
  */
 export const minMediaQuery = (str) => {
     let mediaQuery = '';
 
     switch (str) {
+        case 'xs':
+            mediaQuery = `@media (min-width: ${breakpoints.xs}px)`;
+            break;
         case 'sm':
-            mediaQuery = `@media (min-width: ${breakpoints.min.sm}px)`;
+            mediaQuery = `@media (min-width: ${breakpoints.sm}px)`;
             break;
         case 'md':
-            mediaQuery = `@media (min-width: ${breakpoints.min.md}px)`;
+            mediaQuery = `@media (min-width: ${breakpoints.md}px)`;
             break;
         case 'lg':
-            mediaQuery = `@media (min-width: ${breakpoints.min.lg}px)`;
+            mediaQuery = `@media (min-width: ${breakpoints.lg}px)`;
+            break;
+        case 'xl':
+            mediaQuery = `@media (min-width: ${breakpoints.xl}px)`;
             break;
         default:
             mediaQuery = '';

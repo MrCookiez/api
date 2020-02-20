@@ -3,8 +3,9 @@ import useAxios from 'axios-hooks';
 import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
 import Card from '../../components/Card';
-// import * as styles from './styles';
 import Layout from '../../layout/Basic';
+import Navigation from '../../components/Menu';
+// import * as styles from './styles';
 
 const Home = ({ color }) => {
     const [{ data, loading, error }, refetch] = useAxios(
@@ -12,13 +13,13 @@ const Home = ({ color }) => {
     );
 
     return (
-        <Layout color={color} >
+        <Layout color={color}>
             <button onClick={refetch}>refetch</button>
             <hr />
 
             {loading && <p>Loading...</p>}
             {error && <p>Error... {console.log('Error => ', error)}</p>}
-            <>
+            {/* <div>
                 {data && data.map(item =>
                     <Card
                         key={item.id}
@@ -31,7 +32,7 @@ const Home = ({ color }) => {
                         offer={item.offer}
                     />
                 )}
-             </>
+             </div> */}
         </Layout>
     );
 };
