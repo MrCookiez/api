@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Navigation = () => {
-    <>Menu navigation</>
-};
+const MobileNav = () => (
+    <div>Mobile navigation</div>
+);
 
-export default Navigation;
+export default MobileNav;
 

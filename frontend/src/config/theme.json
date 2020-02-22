@@ -1,11 +1,18 @@
 {
     "colors": {
-        "red": "#c82333",
-        "lightGreen": "#228b22c7",
-        "green": "#228b22",
-        "light": "#fafafa",
-        "gray": "#e7e8ea",
-        "dark": "#222222"
+        "grayScale": {
+            "light": "#fafafa",
+            "dark": "#37474f"
+        },
+        "primary": {
+            "lightRed": "#ff5f52",
+            "red": "#c62828",
+            "darkRed": "#8e0000"
+        },
+        "secondary": {
+            "lightGreen": "#f1f8e9",
+            "darkGreen": "#bec5b7"
+        }
     },
     "spacing": {
         "xs": 8,
