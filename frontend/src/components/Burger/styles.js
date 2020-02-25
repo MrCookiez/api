@@ -2,6 +2,7 @@ import { css } from 'styled-components';
 import theme from '../../config/theme.json';
 
 const buttonSize = 20;
+
 export default css`
     position: relative;
     display: flex;
@@ -23,7 +24,6 @@ export default css`
             content: '';
             left: 0;
             right: 0;
-            margin-bottom: 1px;
             position: absolute;
             background-color: ${theme.colors.primary.darkRed};
             width: 100%;
