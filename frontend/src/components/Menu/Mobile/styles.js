@@ -36,6 +36,7 @@ export default css`
         width: 100%;
         height: 100%;
         background-color: ${theme.colors.primary.darkRed};
+        opacity: ${({ active }) => active ? '1' : '0' };
         transform: translateX(${({ active }) => active ? '0' : '-100%' });
         z-index: 2;
         transition: .3s ease-in-out;
