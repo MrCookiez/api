@@ -6,9 +6,4 @@ export default css`
     justify-content: space-evenly;
     align-content: center;
     width: 100%;
-
-    .container {
-        border: 1px solid ${theme.colors.red};
-        justify-content: space-evenly;
-    }
 `;
