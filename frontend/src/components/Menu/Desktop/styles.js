@@ -19,24 +19,25 @@ export default css`
 
         li {
             transition: ${theme.animations.default};
-            margin: ${theme.spacing.sm}px;
+            padding: ${theme.spacing.sm}px;
 
-            :hover {
-                transform: scale(1.1);
+            .active {
+                opacity: 1;
             }
 
             a {
                 font-weight: bold;
                 color: ${theme.colors.grayScale.dark};
                 opacity: 0.7;
-
-                :hover {
-                    color: ${theme.colors.primary.red};
-                }
             }
 
-            .active {
-                opacity: 1;
+            :hover {
+                border-radius: 3px;
+                transform: scale(1.1);
+
+                a {
+                    color: ${theme.colors.primary.red};
+                }
             }
         }
     }
