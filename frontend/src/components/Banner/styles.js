@@ -8,4 +8,5 @@ export default css`
     width: 100%;
     padding: ${theme.spacing.sm}px 0;
     background-color: ${theme.colors.grayScale.dark};
+    box-shadow: ${theme.shadow.primary};
 `;

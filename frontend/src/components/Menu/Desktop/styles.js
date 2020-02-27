@@ -26,7 +26,9 @@ export default css`
             }
 
             a {
-                color: ${theme.colors.secondary.darkGreen};
+                font-weight: bold;
+                color: ${theme.colors.grayScale.dark};
+                opacity: 0.7;
 
                 :hover {
                     color: ${theme.colors.primary.red};
@@ -34,7 +36,7 @@ export default css`
             }
 
             .active {
-                color: ${theme.colors.grayScale.dark};
+                opacity: 1;
             }
         }
     }

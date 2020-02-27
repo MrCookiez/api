@@ -1,6 +1,7 @@
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Home from '../pages/Home';
+import Shops from '../pages/Shops';
 
 export default [
     {
@@ -22,6 +23,11 @@ export default [
         "name": "deals",
         "path": "/deals",
         "component": Home
+    },
+    {
+        "name": "shops",
+        "path": "/shops",
+        "component": Shops
     },
     {
         "name": "food-map",
