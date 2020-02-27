@@ -2,43 +2,42 @@ import React from "react";
 import useAxios from 'axios-hooks';
 import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
-import Card from '../../components/Card';
 import Layout from '../../layout/Basic';
-import Container from '../../components/Container';
 import Banner from '../../components/Banner';
-
+import Hero from '../../components/Hero';
+import Section from '../../components/Section';
+import Card from '../../components/Card';
 // import * as styles from './styles';
 
-const Home = ({ color }) => {
+const Home = () => {
     const [{ data, loading, error }, refetch] = useAxios(
         `${endpoint.proxy}`,
     );
 
     return (
-        <Layout color={color}>
+        <Layout>
             <Banner />
-            <Container>
-                test
-            </Container>
+            <Hero />
+            <Section type='h1' heading='Φλώρινα | Delivery'>
+                {loading && <p>Loading...</p>}
+                {error && <p>Error... {console.log('Error => ', error)}</p>}
+                <div>
+                    {data && data.map(item =>
+                        <Card
+                            key={item.id}
+                            name={item.name}
+                            description={item.description}
+                            price={item.price}
+                            category={item.category}
+                            subCategory={item.sub_category}
+                            availability={item.availability}
+                            offer={item.offer}
+                        />
+                    )}
+                </div>
+            </Section>
             <button onClick={refetch}>refetch</button>
             <hr />
-
-            {loading && <p>Loading...</p>}
-            {error && <p>Error... {console.log('Error => ', error)}</p>}
-            {/* <div>
-                {data && data.map(item =>
-                    <Card
-                        key={item.id}
-                        name={item.name}
-                        description={item.description}
-                        price={item.price}
-                        category={item.category}
-                        subCategory={item.sub_category}
-                        availability={item.availability}
-                        offer={item.offer}
-                    />
-                )}
-             </div> */}
         </Layout>
     );
 };
