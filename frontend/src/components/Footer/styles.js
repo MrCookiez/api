@@ -3,14 +3,14 @@ import theme from '../../config/theme.json';
 
 export default css`
     padding: 3.2rem;
-    position: absolute;
+    /* position: absolute; */
     left: 0;
     right: 0;
     bottom: 0;
     overflow: hidden;
     background-color: ${theme.colors.grayScale.dark};
     text-align: center;
-    
+
     .container {
         display: flex;
         justify-content: center;
@@ -19,6 +19,7 @@ export default css`
 
         p {
             color: ${theme.colors.grayScale.light};
+            margin: ${theme.spacing.xl}px;
         }
 
         a {
@@ -27,7 +28,8 @@ export default css`
         }
 
         ul {
-            padding: ${theme.spacing.md}px 0;
+            margin: 0;
+            padding-left: 0;
             list-style: none;
             display: flex;
             justify-content: center;

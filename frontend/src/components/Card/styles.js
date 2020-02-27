@@ -3,7 +3,7 @@ import theme from '../../config/theme.json';
 import { minMediaQuery } from '../../config/grid';
 
 export const wrapper = css`
-    position: relative;
+    /* position: relative; */
     /* adjust later */
     background-color: white;
     margin: ${theme.spacing.lg}px  auto;

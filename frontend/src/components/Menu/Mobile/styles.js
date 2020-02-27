@@ -7,7 +7,7 @@ export default css`
     .nav-bar {
         display: flex;
         align-items: center;
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
@@ -29,7 +29,7 @@ export default css`
     }
 
     .side-menu-wrapper {
-        position: absolute;
+        position: fixed;
         left: 0;
         right: 0;
         bottom: 0;
