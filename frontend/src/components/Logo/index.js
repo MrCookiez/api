@@ -6,8 +6,8 @@ import { ReactComponent as Pepper } from './pepper.svg';
 
 import styles from './styles';
 
-const Logo = ({ size }) => (
-    <div css={styles}>
+const Logo = ({ size, isWhite }) => (
+    <div css={styles} active={isWhite}>
         <Pepper width={size} />
         <Link to="/" >florinafood.gr</Link>
     </div>
@@ -15,10 +15,12 @@ const Logo = ({ size }) => (
 
 Logo.defaultProps = {
     size: 25,
+    isWhite: false,
 };
 
 Logo.propTypes = {
     size: PropTypes.number,
+    isWhite: PropTypes.bool,
 };
 
 export default Logo;

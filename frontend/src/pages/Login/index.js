@@ -1,8 +1,9 @@
 import React from 'react';
+import Layout from '../../layout/Basic';
 import endpoint from '../../config/endpoint.json';
 
 const Login = () => (
-    <div>
+    <Layout>
         <h2>Hello World Login</h2>
         <form method='POST' action={endpoint.login}>
             <br/>
@@ -15,7 +16,7 @@ const Login = () => (
             <br/>
             <input type='submit' value='Submit' />
         </form>
-    </div>
+    </Layout>
 );
 
 export default Login;

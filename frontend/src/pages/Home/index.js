@@ -4,8 +4,9 @@ import 'styled-components/macro';
 import endpoint from '../../config/endpoint.json';
 import Card from '../../components/Card';
 import Layout from '../../layout/Basic';
-import Navigation from '../../components/Menu';
 import Container from '../../components/Container';
+import Banner from '../../components/Banner';
+
 // import * as styles from './styles';
 
 const Home = ({ color }) => {
@@ -15,6 +16,7 @@ const Home = ({ color }) => {
 
     return (
         <Layout color={color}>
+            <Banner />
             <Container>
                 test
             </Container>
