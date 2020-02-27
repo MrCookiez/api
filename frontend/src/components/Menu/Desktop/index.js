@@ -13,8 +13,6 @@ const DesktopNav = () => (
                 <li><NavLink to='/deals' activeClassName='active' exact>προσφορες</NavLink></li>
                 <li><NavLink to='/shops' activeClassName='active' exact>καταστηματα</NavLink></li>
                 <li><NavLink to='/blog' activeClassName='active' exact>blog</NavLink></li>
-                <li><NavLink to='/contact' activeClassName='active' exact>contact</NavLink></li>
-                <li><NavLink to='/jobs' activeClassName='active' exact>jobs</NavLink></li>
                 <li><NavLink to='/register' activeClassName='active' exact>register</NavLink></li>
                 <li><NavLink to='/login' activeClassName='active' exact>log in</NavLink></li>
             </ul>

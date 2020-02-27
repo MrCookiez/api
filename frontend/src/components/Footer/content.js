@@ -1,9 +1,9 @@
 import { getCurrentYear } from '../../utils';
 
 export default {
-    text: `Copyright © www.florinafood.gr ${getCurrentYear()} | All rights reserved Designed & developed by`,
+    text: `Copyright © ${getCurrentYear()} www.florinafood.gr`,
     link: {
-        label: 'Theodoros Vragkos',
+        label: 'Designed & developed by Theodoros Vragkos',
         href: 'http://teovragkos.com/'
     }
 };
