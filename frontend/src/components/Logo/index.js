@@ -9,7 +9,7 @@ import styles from './styles';
 const Logo = ({ size, isWhite }) => (
     <div css={styles} active={isWhite}>
         <Pepper width={size} />
-        <Link to="/" ><span>florinafood.</span>gr</Link>
+        <Link to="/" >florinafood.gr</Link>
     </div>
 );
 
