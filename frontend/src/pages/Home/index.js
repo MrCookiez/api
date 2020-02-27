@@ -16,8 +16,8 @@ const Home = ({ color }) => {
 
     return (
         <Layout color={color}>
-            <Container>
             <Banner />
+            <Container>
                 test
             </Container>
             <button onClick={refetch}>refetch</button>

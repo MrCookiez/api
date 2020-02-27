@@ -7,5 +7,5 @@ export default css`
     align-items: center;
     width: 100%;
     padding: ${theme.spacing.sm}px 0;
-    background-color: ${theme.colors.grayScale.light};
+    background-color: ${theme.colors.grayScale.dark};
 `;
