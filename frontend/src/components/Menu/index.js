@@ -5,7 +5,7 @@ import MobileNav from './Mobile';
 import { breakpoints } from '../../config/grid';
 
 const Navigation = () => (
-    <Media query={`(max-width: ${breakpoints.sm}px`}>
+    <Media query={`(max-width: ${breakpoints.md}px`}>
         {match => match ? <MobileNav />  : <DesktopNav />}
     </Media>
 );
