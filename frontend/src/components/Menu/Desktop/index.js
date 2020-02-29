@@ -1,8 +1,7 @@
 import React from 'react';
 import 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
-import House from '../../Icons';
-import Container from '../../Container';
+// import House from '../../Icons';
 import styles from './styles';
 
 const DesktopNav = () => (
