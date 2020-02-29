@@ -6,6 +6,7 @@ import Layout from '../../layout/Basic';
 import Banner from '../../components/Banner';
 import Hero from '../../components/Hero';
 import Section from '../../components/Section';
+import CategoryCard from "../../components/CategoryCard/index.js";
 import Card from '../../components/Card';
 // import * as styles from './styles';
 
@@ -19,6 +20,7 @@ const Home = () => {
             <Banner />
             <Hero />
             <Section type='h1' heading='Φλώρινα | Delivery'>
+                <CategoryCard categoryName='Pizza' />
                 {loading && <p>Loading...</p>}
                 {error && <p>Error... {console.log('Error => ', error)}</p>}
                 <div>
