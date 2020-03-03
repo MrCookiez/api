@@ -5,6 +5,13 @@ import styles from './styles';
 
 const Hero = ({ town, text }) => (
     <div css={styles}>
+        {/*
+            Add mini slider on x amount of second to change the text with:
+            1. Florina | online delivery
+            2. 5 online delivery shops
+            3. 40 total shops
+            4. 10 food menus
+        */}
         <h1 className='hero-title'>{town}<span>{text}</span></h1>
     </div>
 );

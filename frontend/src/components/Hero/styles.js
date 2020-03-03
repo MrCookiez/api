@@ -21,13 +21,22 @@ export default css`
         right: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-
+        background-color: rgba(0, 0, 0, .5);
     }
 
     h1 {
         text-transform: uppercase;
         color: ${theme.colors.grayScale.light};
+        font-size: ${theme.font.size.three};
+
+        ${minMediaQuery('md')} {
+            font-size: ${theme.font.size.two};
+        }
+
+        ${minMediaQuery('lg')} {
+            font-size: ${theme.font.size.one};
+        }
+
         z-index: 1;
         display: flex;
         justify-content: center;
@@ -36,12 +45,12 @@ export default css`
         span {
             display: flex;
             flex-wrap: wrap;
-            color: ${theme.colors.primary.lightRed};
+            color: ${theme.colors.secondary.darkGreen};
 
             :before {
                 display: none;
 
-                ${minMediaQuery('md')} {
+                ${minMediaQuery('sm')} {
                     content: '';
                     height: 80%;
                     width: 2px;

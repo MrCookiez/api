@@ -1,22 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
+import { NavLink } from 'react-router-dom';
 import styles from './styles';
 
-const CategoryCard = ({ categoryName }) => {
-    return (
-        <div css={styles}>
-            {categoryName || 'CATEGORY CARD'}
-        </div>
-    );
-};
+const CategoryCard = ({ className, title, link, bgImg }) => (
+    <NavLink
+        to={link}
+        css={styles}
+        bgImg={bgImg}
+        className={className}
+    >
+        <span>{title}</span>
+    </NavLink>
+);
 
 CategoryCard.defaultProps = {
-    categoryName: '',
+    link: '/',
+    className: '',
+    title: '',
+    bgImg: 'https://picsum.photos/200/300',
 };
 
 CategoryCard.propTypes = {
-    categoryName: PropTypes.string,
+    link: PropTypes.string,
+    className: PropTypes.string,
+    bgImg: PropTypes.string,
+    title: PropTypes.string,
 };
 
 export default CategoryCard;

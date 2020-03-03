@@ -1,34 +1,35 @@
 export default {
-    categoryItems: [
+    title: 'Τι θα φάμε σήμερα;',
+    cards: [
         {
             name: 'Pizza',
             link: 'shops/pizza',
-            imgAlt: 'pizza'
+            bgImg: 'https://florinafood.gr/imgs/menu/pizza.jpg'
         },
         {
-            name: 'Σουβλακια',
-            link: 'shops/soublakia',
-            imgAlt: 'σουβλακια'
+            name: 'Γυρος',
+            link: 'shops/guros',
+            bgImg: 'https://florinafood.gr/imgs/menu/souvlakia.jpg'
         },
         {
             name: 'Burger',
             link: 'shops/burger',
-            imgAlt: 'burger'
+            bgImg: 'https://florinafood.gr/imgs/menu/burger.jpg',
         },
         {
             name: 'Hot Dog',
             link: 'shops/hot-dog',
-            imgAlt: 'hot dog'
+            bgImg: 'https://florinafood.gr/imgs/menu/hotdog.jpg',
         },
         {
             name: 'Sandwich',
             link: 'shops/sandwich',
-            imgAlt: 'sandwich'
+            bgImg: 'https://florinafood.gr/imgs/menu/sandwich.jpg',
         },
         {
             name: 'Κρεπες',
             link: 'shops/crepes',
-            imgAlt: 'κρέπες'
+            bgImg: 'https://florinafood.gr/imgs/menu/crepe.jpg',
         },
     ]
 };

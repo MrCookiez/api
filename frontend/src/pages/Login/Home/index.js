@@ -4,12 +4,13 @@ import 'styled-components/macro';
 import Grid from '@material-ui/core/Grid';
 
 import endpoint from '../../config/endpoint.json';
-import Layout from '../../layout/Basic';
-import Banner from '../../components/Banner';
-import Hero from '../../components/Hero';
-import Section from '../../components/Section';
-import CategorySection from "../../components/CategorySection";
-import content from '../../content/Home';
+import Layout from '../../../layout/Basic';
+import Banner from '../../../components/Banner';
+import Hero from '../../../components/Hero';
+import Section from '../../../components/Section';
+import CategorySection from "../../../components/CategorySection";
+import content from "../../../content/Home";
+// import Card from '../../../components/Card';
 // import * as styles from './styles';
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
             <Hero />
             <CategorySection data={content} />
             <Section>
+
                 {loading && <p>Loading...</p>}
                 {error && <p>Error... {console.log('Error => ', error)}</p>}
                 <Grid container>

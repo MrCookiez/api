@@ -14,6 +14,18 @@
             "darkGreen": "#bec5b7"
         }
     },
+    "font": {
+        "size": {
+            "one": "48px",
+            "two": "40px",
+            "three": "36px",
+            "four": "28px"
+        },
+        "weight": {
+            "light": "lighter",
+            "strong": "bold"
+        }
+    },
     "spacing": {
         "xs": 8,
         "sm": 16,
