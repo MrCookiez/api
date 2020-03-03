@@ -37,7 +37,7 @@ export const minMediaQuery = (str) => {
         default:
             mediaQuery = '';
             break;
-    };
+    }
 
     return mediaQuery;
 }

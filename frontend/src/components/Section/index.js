@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
+// import Grid from '@material-ui/core';
 // import { NavLink } from 'react-router-dom';
-import Container from '../Container';
 import styles from './styles';
 
 const Section = ({ className, heading, children, type }) => (
@@ -11,14 +11,14 @@ const Section = ({ className, heading, children, type }) => (
         {type === 'h2' && <h2>{heading}</h2>}
         {type === 'h3' && <h3>{heading}</h3>}
 
-        <Container className='section-container'>{children}</Container>
+        <div className='section-container'>{children}</div>
     </div>
 );
 
 Section.defaultProps = {
     type: 'h2',
     className: '',
-    heading: 'Heading',
+    heading: '',
     children: <></>,
 };
 
