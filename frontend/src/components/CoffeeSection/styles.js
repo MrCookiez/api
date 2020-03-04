@@ -42,7 +42,7 @@ export default css`
 
                 img {
                     border-radius: 4px;
-                    max-width: 450px;
+                    max-width: 480px;
                     box-shadow: ${theme.shadow.primary};
                     animation: ${animation} 1.5s linear infinite alternate;
                 }
@@ -53,7 +53,7 @@ export default css`
                 justify-content: center;
                 align-items: flex-start;
                 flex-direction: column;
-                padding: ${theme.spacing.lg}px;
+                padding: ${theme.spacing.lg * 1.5}px;
                 background-color: ${theme.colors.secondary.lightGreen};
                 box-shadow: ${theme.shadow.primary};
                 border-radius: ${theme.radius.primary}px;
