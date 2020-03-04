@@ -1,5 +1,5 @@
 import React from 'react';
-import endpoint from '../../config/endpoint.json';
+// import endpoint from '../../config/endpoint.json';
 import Layout from '../../layout/Basic';
 
 const Shops = () => (
