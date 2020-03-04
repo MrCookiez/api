@@ -44,7 +44,6 @@ export default css`
                     border-radius: 4px;
                     max-width: 480px;
                     box-shadow: ${theme.shadow.primary};
-                    animation: ${animation} 1.5s linear infinite alternate;
                 }
             }
 
@@ -57,13 +56,26 @@ export default css`
                 background-color: ${theme.colors.secondary.lightGreen};
                 box-shadow: ${theme.shadow.primary};
                 border-radius: ${theme.radius.primary}px;
+                position: relative;
+
+                .text-block {
+                    margin-bottom: ${theme.spacing.lg}px;
+                }
+
+                h2 {
+                    font-weight: ${theme.font.weight.light};
+                }
 
                 button {
                     justify-self: flex-start;
                 }
 
-                .text-block {
-                    margin-bottom: ${theme.spacing.lg}px;
+                svg {
+                    position: absolute;
+                    bottom: 40px;
+                    right: 40px;
+                    transform: rotate(25deg);
+                    animation: ${animation} 1.5s linear infinite alternate;
                 }
             }
         }
@@ -73,5 +85,4 @@ export default css`
         margin: ${theme.spacing.xl * 2}px 0;
         padding: ${theme.spacing.xl * 2}px;
     }
-
 `;

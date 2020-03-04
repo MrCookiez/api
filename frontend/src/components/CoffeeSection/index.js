@@ -7,6 +7,7 @@ import CustomButton from '../Button';
 import { breakpoints } from '../../config/grid';
 import coffeeArtJPG from './img/cappuccino-art.jpg';
 import { ReactComponent as CoffeeCup } from './img/coffee-cup.svg';
+import { ReactComponent as CoffeeBeans } from './img/coffee-beans.svg';
 import styles from './styles';
 
 const CoffeeSection = ({ data, className }) => {
@@ -44,6 +45,7 @@ const CoffeeSection = ({ data, className }) => {
                                     <h2>{title}</h2>
                                     <p>{text}</p>
                                     {to} Desktop
+                                    <CoffeeBeans width={80} />
                                 </div>
 
                                 <CustomButton to={to} label={label} />
