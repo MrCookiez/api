@@ -21,7 +21,7 @@ const animation = keyframes`
 export default css`
     margin: ${theme.spacing.xs}px auto;
     padding: ${theme.spacing.xs}px;
-    background-color: ${theme.colors.primary.red};
+    background-color: ${theme.colors.primary.darkRed};
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
