@@ -38,5 +38,8 @@
     },
     "animations": {
         "default": ".3s ease-in-out"
+    },
+    "radius": {
+        "primary": 4
     }
 }

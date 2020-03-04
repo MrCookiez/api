@@ -6,3 +6,7 @@ body {
 a {
     text-decoration: none;
 }
+
+p {
+    letter-spacing: 1px;
+}
