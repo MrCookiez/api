@@ -10,7 +10,7 @@ import { ReactComponent as CoffeeCup } from './img/coffee-cup.svg';
 import { ReactComponent as CoffeeBeans } from './img/coffee-beans.svg';
 import styles from './styles';
 
-const CoffeeSection = ({ data, className }) => {
+const CoffeeSection = ({ className, data }) => {
     const { title, text, button: { to, label } } = data;
 
     return (
@@ -19,32 +19,34 @@ const CoffeeSection = ({ data, className }) => {
                 {match => match
                     ? (
                         <Grid container className='mobile-coffee-wrapper'>
-                            <Grid item xs={12}>
-                                <div className="">
+                            <Grid item xs={12} className='block-container'>
+                                <div className="text-block">
                                     <h2>{title}</h2>
                                     <p>{text}</p>
-                                    {to} Desktop
                                 </div>
                                 <CustomButton to={to} label={label} />
                             </Grid>
 
                             <Grid item xs={12}>
-                                <CoffeeCup />
+                                <CoffeeCup className='coffee-cup' />
                             </Grid>
                         </Grid>)
                     : (
-                        <Grid container direction="row"
-                        justify="center"
-                        alignItems="center" className='desktop-coffee-wrapper'>
-                             <Grid className='img-wrapper' item lg={4}>
+                        <Grid
+                            container
+                            direction="row"
+                            justify="center"
+                            alignItems="center"
+                            className='desktop-coffee-wrapper'
+                        >
+                            <Grid className='img-wrapper' item lg={4}>
                                 <img src={coffeeArtJPG} alt="coffee-art-cappuccino" />
                             </Grid>
 
-                            <Grid item lg={6} className='block-container'>
+                            <Grid item lg={4} className='block-container'>
                                 <div className="text-block">
                                     <h2>{title}</h2>
                                     <p>{text}</p>
-                                    {to} Desktop
                                     <CoffeeBeans width={80} />
                                 </div>
 
@@ -68,14 +70,20 @@ CoffeeSection.defaultProps = {
 };
 
 CoffeeSection.propTypes = {
-    title: PropTypes.string,
-    text: PropTypes.string,
     link: PropTypes.string,
     className: PropTypes.string,
     button: PropTypes.shape({
         to: PropTypes.string,
         label: PropTypes.string,
     }),
+    data: {
+         title: PropTypes.string,
+         text: PropTypes.string,
+         button: {
+             to: PropTypes.string,
+             label: PropTypes.string,               
+         },  
+    },
 };
 
 export default CoffeeSection;

@@ -5,15 +5,20 @@ import { NavLink } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import styles from './styles';
 
-const CustomButton = ({ label, to }) => (
-    <NavLink css={styles} to={to}>
+const CustomButton = ({ className, label, to }) => (
+    <NavLink className={className} css={styles} to={to}>
         <Button>
             {label}
         </Button>
     </NavLink>
 );
 
+CustomButton.defaultProps = {
+    className: '',
+};
+
 CustomButton.propTypes = {
+    className: PropTypes.string,
     label: PropTypes.string.isRequired,
     to: PropTypes.string.isRequired,
 };
