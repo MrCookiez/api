@@ -1,16 +1,17 @@
-import React from "react";
-import useAxios from 'axios-hooks';
-import 'styled-components/macro';
 import Grid from '@material-ui/core/Grid';
-
-import endpoint from '../../config/endpoint.json';
-import Layout from '../../layout/Basic';
+import useAxios from 'axios-hooks';
+import React from "react";
+import 'styled-components/macro';
 import Banner from '../../components/Banner';
 import Hero from '../../components/Hero';
 import Section from '../../components/Section';
 import CategorySection from "../../components/CategorySection";
+import CoffeeSection from "../../components/CoffeeSection";
 import content from '../../content/Home';
-// import * as styles from './styles';
+import Layout from '../../layout/Basic';
+import endpoint from '../../config/endpoint.json';
+
+const { categories, coffee } = content;
 
 const Home = () => {
     const [{ data, loading, error }, refetch] = useAxios(
@@ -21,7 +22,8 @@ const Home = () => {
         <Layout>
             <Banner />
             <Hero />
-            <CategorySection data={content} />
+            <CategorySection data={categories} />
+            <CoffeeSection data={coffee} />
             <Section>
                 {loading && <p>Loading...</p>}
                 {error && <p>Error... {console.log('Error => ', error)}</p>}

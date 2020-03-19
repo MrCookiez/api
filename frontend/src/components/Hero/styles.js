@@ -1,17 +1,22 @@
 import { css } from 'styled-components';
 import theme from '../../config/theme.json';
 import { minMediaQuery } from '../../config/grid.js';
+import burgerBg from './img/burger-and-fries.jpg';
 
 export default css`
     height: 450px;
-    background-image: url('https://i.picsum.photos/id/876/1440/450.jpg');
+    background-image: url(${burgerBg});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+
+    ${minMediaQuery('lg')} {
+        background-position: 0 -420px;
+    }
 
     :before {
         content: '';
@@ -21,7 +26,7 @@ export default css`
         right: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, .5);
+        background-color: rgba(0, 0, 0, .6);
     }
 
     h1 {
@@ -45,7 +50,7 @@ export default css`
         span {
             display: flex;
             flex-wrap: wrap;
-            color: ${theme.colors.secondary.darkGreen};
+            color: ${theme.colors.secondary.lightGreen};
 
             :before {
                 display: none;

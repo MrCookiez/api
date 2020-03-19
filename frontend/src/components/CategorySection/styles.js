@@ -4,6 +4,7 @@ import { minMediaQuery } from '../../config/grid';
 
 export default css`
     margin: auto;
+    margin: ${theme.spacing.xl * 2}px auto;
     max-width: 960px;
 
     .category-container {
