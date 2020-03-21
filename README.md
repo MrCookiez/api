@@ -1,7 +1,7 @@
 # florinafood.gr
 Local Delivery and Food Guide
 
-![](Screenshot%202020-03-21%20at%2001.40.59.png)
+<img src="Screenshot%202020-03-21%20at%2001.40.59.png" width=40 height=40 />
 
 ### Build with (L0v3)
 * MySQL
