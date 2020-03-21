@@ -1,13 +1,13 @@
 # florinafood.gr
 Local Delivery and Food Guide
 
-### BUILD WITH
+### Build with (L0v3)
 * MySQL
 * Express JS
 * React JS
 * Node JS
 
-### INSTALL && RUN PROJECT
+### Install & run project
 
 1. Type `yarn && yarn setup` enter - to install all the node modules
 2. Type `yarn dev` enter - to start the project
