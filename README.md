@@ -12,6 +12,22 @@ Local Delivery and Food Guide
 1. Type `yarn && yarn setup` enter - to install all the node modules
 2. Type `yarn dev` enter - to start the project
 
+### Project Managment Software
+
+1. Database design | MySQLdbm
+Link: https://app.sqldbm.com/MySQL/Draft/
+-----------------------------------------
+
+2. Software design | Figma
+Link: https://www.figma.com/
+-----------------------------------------
+
+3. Task Manager    | nTask
+Link: https://www.ntaskmanager.com/
+-----------------------------------------
+
+
+## Detailes
 #### 1. Admin role
 > Code: 0
 > As an administrator the privilege are unlimited. Both private and public data can be accessed
