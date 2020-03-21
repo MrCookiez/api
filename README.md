@@ -12,7 +12,7 @@ Local Delivery and Food Guide
 1. Type `yarn && yarn setup` enter - to install all the node modules
 2. Type `yarn dev` enter - to start the project
 
-### Project Managment/Design/Planning
+### Project Planning/Design/Managment
 
 1. Database design | MySQLdbm
 Link: https://app.sqldbm.com/MySQL/Draft/
