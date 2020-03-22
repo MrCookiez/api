@@ -3,6 +3,12 @@ Local Delivery and Food Guide
 
 <img src="Screenshot%202020-03-21%20at%2001.40.59.png" width=40 height=40 />
 
+Backend links:
+
+0. Main API -> https://github.com/MrCookiez/florinafood-api
+1. Anytime API -> https://github.com/MrCookiez/florinafood-anytime-API
+2. Fresh API -> https://github.com/MrCookiez/florinafood-fresh-API
+
 ### Build with (L0v3)
 * MySQL
 * Express JS
