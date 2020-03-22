@@ -1,26 +1,52 @@
 {
-  "name": "florinafood-api",
-  "proxy": "http://localhost:3001",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "iclient": "cd frontend && yarn",
-    "iserver": "cd backend && yarn",
-    "setup": "concurrently \"yarn iserver\" \"yarn iclient\"",
-    "client": "cd frontend && yarn start",
-    "server": "cd backend && yarn start",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "nodemon": "nodemon server.js"
-  },
-  "author": "",
-  "license": "ISC",
+  "name": "my-app",
+  "proxy": "http://localhost:3000/",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "concurrently": "^5.0.0",
-    "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "nodemon": "^1.19.4"
+    "@material-ui/core": "^4.9.4",
+    "axios": "^0.19.0",
+    "axios-hooks": "^1.7.2",
+    "file-loader": "^5.1.0",
+    "jump.js": "^1.0.2",
+    "material-components-web": "^5.0.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.11.0",
+    "react-hook-form": "^4.4.8",
+    "react-media": "^1.10.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1",
+    "url-loader": "^3.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.3"
+  },
+  "babelMacros": {
+    "styledComponents": {
+      "pure": true
+    }
   }
 }

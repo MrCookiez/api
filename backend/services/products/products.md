@@ -1,3 +1,0 @@
-### SHOPS PRODUCT LIST AVAILABLE FOR:
-
-1. Anytime
