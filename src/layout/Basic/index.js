@@ -14,8 +14,8 @@ const jumpToTop = () => (
     })
 );
 
-const Layout = ({ children }) => (
-    <div className='top'>
+const Layout = ({ className, children }) => (
+    <div className={`${className} top`}>
         <Navigation />
         {children}
         <BackToTop toTop={() => jumpToTop()} />

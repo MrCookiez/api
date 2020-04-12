@@ -1,7 +1,8 @@
+import Home from '../pages/Home';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
-import Home from '../pages/Home';
 import Shops from '../pages/Shops';
+import Blog from '../pages/Blog';
 
 export default [
     {
@@ -37,7 +38,7 @@ export default [
     {
         "name": "blog",
         "path": "/blog",
-        "component": Home
+        "component": Blog
     },
     {
         "name": "contact",
