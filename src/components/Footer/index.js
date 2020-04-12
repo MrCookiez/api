@@ -1,9 +1,11 @@
 import React from 'react';
 import 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
-import content from './content';
+import content from './content.js';
 import CustomLink from '../CustomLink';
 import styles from './styles';
+
+const { text, link } = content;
 
 const Footer = () => (
     <div css={styles}>
@@ -13,10 +15,10 @@ const Footer = () => (
                 <li><NavLink to='/jobs' activeClassName='active' exact>jobs</NavLink></li>
                 <li><NavLink to='/register' activeClassName='active' exact>register</NavLink></li>
             </ul>
-            <p>{content.text}</p>
+            <p>{text}</p>
             <CustomLink
-                label={content.link.label}
-                href={content.link.href}
+                label={link.label}
+                href={link.href}
             />
         </div>
     </div>
