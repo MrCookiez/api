@@ -8,7 +8,7 @@ import Button from '../Button';
 import endpoint from '../../config/endpoint.json';
 import styles from './styles';
 
-const PostUpload = ({ className }) => {
+const PostForm = ({ className }) => {
     const { register, handleSubmit, errors } = useForm();
     const postURL = `${endpoint.addPost}`;
 
@@ -35,12 +35,12 @@ const PostUpload = ({ className }) => {
     );
 };
 
-PostUpload.defaultProps = {
+PostForm.defaultProps = {
     className: '',
 };
 
-PostUpload.propTypes = {
+PostForm.propTypes = {
     className: PropTypes.string,
 };
 
-export default PostUpload;
+export default PostForm;

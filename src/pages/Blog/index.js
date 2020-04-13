@@ -4,7 +4,7 @@ import 'styled-components/macro';
 
 import Layout from '../../layout/Basic';
 import Post from '../../components/Post';
-import PostUpload from '../../components/PostUpload';
+import PostForm from '../../components/PostForm';
 
 import endpoint from '../../config/endpoint.json';
 import styles from './styles';
@@ -25,7 +25,7 @@ const Blog = () => {
                     <h2>Blog page</h2>
                     <div className='posts__wrapper'>
                         {loading && <h2>Loading ...</h2>}
-                        <PostUpload />
+                        <PostForm />
                         {data && data.map(post => <Post key={post.id} data={post} />)}
                     </div>
                 </div>
