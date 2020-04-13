@@ -13,7 +13,7 @@ exports[`<Banner /> should return match the snapshot 1`] = `
       pepper.svg
     </svg>
     <a
-      to="/"
+      href="/"
     >
       florinafood.gr
     </a>
