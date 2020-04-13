@@ -21,8 +21,8 @@ const CustomLink = ({ label, href, to }) => (
 
 CustomLink.propTypes = {
     label: PropTypes.string.isRequired,
-    href: PropTypes.string.isRequired,
-    to: PropTypes.string.isRequired,
+    href: PropTypes.string,
+    to: PropTypes.string,
 };
 
 export default CustomLink;

@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Banner /> should return match the snapshot 1`] = `
+<div
+  className="Banner___StyledDiv-lpf000-0 eCHwFM"
+>
+  <div
+    className="Logo___StyledDiv-v7wbvh-0 hslNiJ"
+  >
+    <svg
+      width={25}
+    >
+      pepper.svg
+    </svg>
+    <a
+      href="/"
+    >
+      florinafood.gr
+    </a>
+  </div>
+</div>
+`;

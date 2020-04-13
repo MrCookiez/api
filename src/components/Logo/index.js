@@ -1,15 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
-import { Link } from 'react-router-dom';
 import { ReactComponent as Pepper } from './pepper.svg';
-
 import styles from './styles';
 
 const Logo = ({ size, isWhite }) => (
     <div css={styles} active={isWhite}>
         <Pepper width={size} />
-        <Link to="/" >florinafood.gr</Link>
+        <a href="/" >florinafood.gr</a>
     </div>
 );
 

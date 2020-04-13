@@ -1,15 +1,13 @@
-{
+module.exports = {
     "env": {
         "browser": true,
         "es6": true
     },
     "extends": [
-        "parser: babel-eslint",
+        "airbnb",
+        "airbnb/hooks",
         "eslint:recommended",
-        "plugin:react/recommended",
-        "react",
-        "jsx-a11y",
-        "import"
+        "plugin:react/recommended"
     ],
     "globals": {
         "Atomics": "readonly",
@@ -25,6 +23,5 @@
     "plugins": [
         "react"
     ],
-    "rules": {
-    }
-}
+    "rules": {}
+};

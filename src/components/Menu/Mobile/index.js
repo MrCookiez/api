@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import 'styled-components/macro';
 import { NavLink } from 'react-router-dom';
+
 import Logo from '../../Logo';
 import Burger from '../../Burger';
 import styles from './styles';
@@ -26,7 +27,7 @@ const MobileNav = () => {
                         <NavLink to='/' activeClassName='active' exact>αρχικη</NavLink>
                         <NavLink to='/' activeClassName='active' exact>προσφορες</NavLink>
                         <NavLink to='/' activeClassName='active' exact>καταστηματα</NavLink>
-                        <NavLink to='/' activeClassName='active' exact>blog</NavLink>
+                        <NavLink to='/blog' activeClassName='active' exact>blog</NavLink>
                         <NavLink to='/' activeClassName='active' exact>contact</NavLink>
                         <NavLink to='/' activeClassName='active' exact>jobs</NavLink>
                         <span className='line'/>

@@ -1,10 +1,13 @@
 {
-    "proxy": "http://localhost:3001",
+    "proxy": "http://localhost:8080",
     "register": "/api/register",
     "login": "api/login",
     "get_all_users": "api/users",
     "getProducts": "/products",
     "addProducts": "api/addProduct/",
     "removeProducts": "api/removeProducts/",
-    "updateProducts": "api/updateProducts/"
+    "updateProducts": "api/updateProducts/",
+    "getPosts": "feed/posts",
+    "getPost": "feed/post",
+    "addPost": "feed/post"
 }
