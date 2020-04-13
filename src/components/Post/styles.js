@@ -1,8 +1,9 @@
 import { css } from 'styled-components';
-// import theme from '../../config/theme.json';
+import theme from '../../config/theme.json';
 
 export default css`
-    background-color: #fff;
+    background-color: ${theme.colors.secondary.lightGreen};
+
     .post__wrapper {
         display: flex;
         flex-direction: column;
@@ -15,6 +16,7 @@ export default css`
         font-size: 32px;
         text-transform: uppercase;
         margin: 0;
+        color: ${theme.colors.grayScale.dark};
     }
 
     .post__text {

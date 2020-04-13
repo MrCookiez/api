@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import jump from 'jump.js'
 import Navigation from '../../components/Menu';
 import Footer from '../../components/Footer';
-// import CookieConsent from '../../components/CookieConsent';
 import BackToTop from '../../components/BackToTop';
 
 const jumpToTop = () => (
@@ -20,7 +19,6 @@ const Layout = ({ className, children }) => (
         {children}
         <BackToTop toTop={() => jumpToTop()} />
         <Footer />
-        {/* <CookieConsent /> */}
     </div>
 );
 

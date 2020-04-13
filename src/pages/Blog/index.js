@@ -1,6 +1,5 @@
 import React from 'react';
 import useAxios from 'axios-hooks';
-// import PropTypes from 'prop-types';
 import 'styled-components/macro';
 
 import Layout from '../../layout/Basic';
@@ -12,8 +11,10 @@ import styles from './styles';
 
 const Blog = () => {
     const [{data, loading, error}] = useAxios(
-        `${endpoint.proxy}/${endpoint.getPosts}`
+        `${endpoint.getPosts}`
     );
+
+    console.log(error);
 
     return (
         <Layout>
@@ -33,10 +34,6 @@ const Blog = () => {
             </div>
         </Layout>
     );
-};
-
-Blog.propTypes = {
-    // posts: PropTypes.shape({}).isRequired,
 };
 
 export default Blog;
