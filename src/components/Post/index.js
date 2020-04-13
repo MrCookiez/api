@@ -1,21 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import 'styled-components/macro';
-import { Link } from 'react-router-dom';
-
 import styles from './styles';
 
-const Post = ({ data: {
-    id,
-    title,
-    author,
-    data,
-    content: {
-        text,
-        image,
-        links: { source },
-    },
-} }) => (
+const Post = ({ data: { id, title, text, author, } }) => id && (
     <div css={styles}>
         <div className='post__wrapper'>
             {title && <h2 className='post__header'>{title}</h2>}
@@ -26,30 +14,22 @@ const Post = ({ data: {
 );
 
 Post.defaultProps = {
-    title: '',
-        content: {
+    data: {
+        title: '',
         text: '',
-            image: '',
-            links: {
-            source: '',
-        },
-    },
-    author: '',
-    date: '',
+        author: '',
+        date: '',
+    }
 };
 
 Post.propTypes = {
-    id: PropTypes.string.isRequired,
-    title: PropTypes.string,
-    content: PropTypes.shape({
+    data: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string,
         text: PropTypes.string,
-        image: PropTypes.string,
-        links: PropTypes.shape({
-            source: PropTypes.string,
-        }),
-    }),
-    author: PropTypes.string,
-    date: PropTypes.string,
+        author: PropTypes.string,
+        date: PropTypes.string,
+    }).isRequired,
 };
 
 export default Post;

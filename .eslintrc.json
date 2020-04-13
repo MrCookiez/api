@@ -4,8 +4,12 @@
         "es6": true
     },
     "extends": [
+        "parser: babel-eslint",
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "react",
+        "jsx-a11y",
+        "import"
     ],
     "globals": {
         "Atomics": "readonly",

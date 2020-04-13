@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import theme from '../../config/theme.json';
+// import theme from '../../config/theme.json';
 
 export default css`
     background-color: #fff;
