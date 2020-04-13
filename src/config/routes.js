@@ -2,8 +2,8 @@ import Home from '../pages/Home';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Shops from '../pages/Shops';
-import Blog from '../pages/Blog';
-import PostPage from '../pages/Post';
+import PostsPage from '../pages/PostsPage';
+import PostPage from '../pages/PostPage';
 
 export default [
     {
@@ -39,7 +39,7 @@ export default [
     {
         "name": "blog",
         "path": "/blog",
-        "component": Blog
+        "component": PostsPage
     },
     {
         "name": "post",

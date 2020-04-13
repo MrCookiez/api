@@ -10,12 +10,13 @@ const PostPage = ({ match: { params: { id } } }) => {
     const [{data, loading, error}] = useAxios(`${endpoints.proxy}/${endpoints.getPost}/${id}`);
     console.log(error);
 
-    console.log('BLOG-POST-ID:: ', id);
     if (!loading && data) console.log('Post data: ', data);
 
-    return (
+    return !loading && data && (
         <Layout css={styles}>
-            SINGLE POST PAGE
+            <h1>{data.title}</h1>
+            <h6>{data.author}</h6>
+            <p>{data.text}</p>
         </Layout>
     );
 };

@@ -5,13 +5,13 @@ import 'styled-components/macro';
 
 import Layout from '../../layout/Basic';
 import Post from '../../components/Post';
-import PostPage from '../Post';
 import PostForm from '../../components/PostForm';
+import PostPage from '../PostPage';
 
 import endpoints from '../../config/endpoint.json';
 import styles from './styles';
 
-const Blog = () => {
+const PostsPage = () => {
     const [{data, loading, error}] = useAxios(`${endpoints.proxy}/${endpoints.getPosts}`);
     console.log(error);
 
@@ -41,4 +41,4 @@ const Blog = () => {
     );
 };
 
-export default Blog;
+export default PostsPage;
