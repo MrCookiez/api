@@ -3,6 +3,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Shops from '../pages/Shops';
 import Blog from '../pages/Blog';
+import PostPage from '../pages/Post';
 
 export default [
     {
@@ -39,6 +40,11 @@ export default [
         "name": "blog",
         "path": "/blog",
         "component": Blog
+    },
+    {
+        "name": "post",
+        "path": "/blog/post/:id",
+        "component": PostPage
     },
     {
         "name": "contact",
