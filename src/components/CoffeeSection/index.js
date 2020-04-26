@@ -11,79 +11,79 @@ import { ReactComponent as CoffeeBeans } from './img/coffee-beans.svg';
 import styles from './styles';
 
 const CoffeeSection = ({ className, data }) => {
-    const { title, text, button: { to, label } } = data;
+  const { title, text, button: { to, label } } = data;
 
-    return (
-        <div className={className} css={styles}>
-            <Media query={`(max-width: ${breakpoints.md}px`}>
-                {match => match
-                    ? (
-                        <Grid container className='mobile-coffee-wrapper'>
-                            <Grid item xs={12} className='block-container'>
-                                <div className="text-block">
-                                    <h2>{title}</h2>
-                                    <p>{text}</p>
-                                </div>
-                                <CustomButton to={to} label={label} />
-                            </Grid>
+  return (
+    <div className={className} css={styles}>
+      <Media query={`(max-width: ${breakpoints.md}px`}>
+        {(match) => (match
+          ? (
+            <Grid container className="mobile-coffee-wrapper">
+              <Grid item xs={12} className="block-container">
+                <div className="text-block">
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                </div>
+                <CustomButton to={to} label={label} />
+              </Grid>
 
-                            <Grid item xs={12}>
-                                <CoffeeCup className='coffee-cup' />
-                            </Grid>
-                        </Grid>)
-                    : (
-                        <Grid
-                            container
-                            direction="row"
-                            justify="center"
-                            alignItems="center"
-                            className='desktop-coffee-wrapper'
-                        >
-                            <Grid className='img-wrapper' item lg={4}>
-                                <img src={coffeeArtJPG} alt="coffee-art-cappuccino" />
-                            </Grid>
+              <Grid item xs={12}>
+                <CoffeeCup className="coffee-cup" />
+              </Grid>
+            </Grid>
+          )
+          : (
+            <Grid
+              container
+              direction="row"
+              justify="center"
+              alignItems="center"
+              className="desktop-coffee-wrapper"
+            >
+              <Grid className="img-wrapper" item lg={4}>
+                <img src={coffeeArtJPG} alt="coffee-art-cappuccino" />
+              </Grid>
 
-                            <Grid item lg={4} className='block-container'>
-                                <div className="text-block">
-                                    <h2>{title}</h2>
-                                    <p>{text}</p>
-                                    <CoffeeBeans width={80} />
-                                </div>
+              <Grid item lg={4} className="block-container">
+                <div className="text-block">
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                  <CoffeeBeans width={80} />
+                </div>
 
-                                <CustomButton to={to} label={label} />
-                            </Grid>
-                        </Grid>
-                    )
-                }
-            </Media>
-        </div>
-    );
+                <CustomButton to={to} label={label} />
+              </Grid>
+            </Grid>
+          ))}
+      </Media>
+    </div>
+  );
 };
 CoffeeSection.defaultProps = {
-    className: '',
-    title: '',
-    text: '',
-    button: {
-        to: '/',
-        label: 'default label',
-    },
+  className: '',
+  title: '',
+  text: '',
+  button: {
+    to: '/',
+    label: 'default label',
+  },
 };
 
 CoffeeSection.propTypes = {
-    link: PropTypes.string,
-    className: PropTypes.string,
-    button: PropTypes.shape({
-        to: PropTypes.string,
-        label: PropTypes.string,
-    }),
-    data: {
-         title: PropTypes.string,
-         text: PropTypes.string,
-         button: {
-             to: PropTypes.string,
-             label: PropTypes.string,               
-         },  
+  link: PropTypes.string,
+  className: PropTypes.string,
+  button: PropTypes.shape({
+    to: PropTypes.string,
+    label: PropTypes.string,
+  }),
+  data: {
+    title: PropTypes.string,
+    text: PropTypes.string,
+    button: {
+      to: PropTypes.string,
+      label: PropTypes.string,
     },
+  },
 };
 
 export default CoffeeSection;

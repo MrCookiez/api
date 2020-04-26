@@ -131,4 +131,3 @@ export const image = css`
         width: 300px;
     }
 `;
-

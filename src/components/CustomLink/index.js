@@ -4,25 +4,17 @@ import { Link } from 'react-router-dom';
 import 'styled-components/macro';
 import styles from './styles';
 
-const CustomLink = ({ label, href, to }) => (
-    <div css={styles}>
-        {
-            href
-            ? (<a rel="noopener noreferrer" href={href} target="_blank">
-                    {label}
-                </a>
-            )
-            : (<Link to={{ pathname: to }}>
-                    {label}
-                </Link>
-            )}
-    </div>
+const CustomLink = ({ label, to }) => (
+  <div css={styles}>
+    <Link href={to}>
+      {label}
+    </Link>
+  </div>
 );
 
 CustomLink.propTypes = {
-    label: PropTypes.string.isRequired,
-    href: PropTypes.string,
-    to: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
 };
 
 export default CustomLink;

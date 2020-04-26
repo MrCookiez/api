@@ -3,9 +3,9 @@
  * @return
  */
 export const getCurrentYear = () => {
-    const date = new Date();
-    const year = date.getFullYear();
-    return year;
+  const date = new Date();
+  const year = date.getFullYear();
+  return year;
 };
 
 /**
@@ -14,9 +14,7 @@ export const getCurrentYear = () => {
  * @return {number} summary of products price
  */
 export const getTotalCost = (products) => {
-    const totalCost = products.reduce((total, product) => {
-        return product.price + total;
-    }, 0);
+  const totalCost = products.reduce((total, product) => product.price + total, 0);
 
-    return totalCost;
-}
+  return totalCost;
+};

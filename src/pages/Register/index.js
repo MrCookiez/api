@@ -6,23 +6,23 @@ const Register = () => (
   <Layout>
     <h2>Register page</h2>
     <form method="POST" action={endpoint.register}>
-      <br/>
+      <br />
       <label>First name:</label>
-      <input type='text' name='firstname' />
-      <br/>
+      <input type="text" name="firstname" />
+      <br />
       <label>Last name:</label>
-      <input type='text' name='lastname' />
-      <br/>
+      <input type="text" name="lastname" />
+      <br />
       <label>Email:</label>
-      <input type='email' name='email' />
-      <br/>
+      <input type="email" name="email" />
+      <br />
       <label>Password:</label>
-      <input type='password' name='password' />
-      <br/>
+      <input type="password" name="password" />
+      <br />
       <label>Re-type password</label>
-      <input type='password' name='passwordMatch' />
-      <br/>
-      <input type='submit' value='Submit' />
+      <input type="password" name="passwordMatch" />
+      <br />
+      <input type="submit" value="Submit" />
     </form>
   </Layout>
 );
