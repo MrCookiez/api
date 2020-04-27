@@ -7,10 +7,10 @@ const Login = () => (
     <h2>Hello World Login</h2>
     <form method="POST" action={endpoint.login}>
       <br />
-      <label>Email:</label>
-      <input type="email" name="email" />
+      <label htmlFor="email">Email:</label>
+      <input name="email" type="email" />
       <br />
-      <label>Password:</label>
+      <label htmlFor="password">Password:</label>
       <input type="password" name="password" />
       <br />
       <br />

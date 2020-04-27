@@ -22,7 +22,12 @@ const Layout = ({ className, children }) => (
   </div>
 );
 
+Layout.defaultProps = {
+  className: '',
+};
+
 Layout.propTypes = {
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

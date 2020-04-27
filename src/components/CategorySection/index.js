@@ -32,12 +32,11 @@ CategorySection.defaultProps = {
 };
 
 CategorySection.propTypes = {
-  bgImg: PropTypes.string.isRequired,
   data: PropTypes.arrayOf(
     PropTypes.shape({}),
   ),
   className: PropTypes.string,
-  title: PropTypes.string,
+  title: PropTypes.string.isRequired,
 };
 
 export default CategorySection;

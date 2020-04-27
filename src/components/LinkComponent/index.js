@@ -10,10 +10,12 @@ const LinkComponent = ({ label, href }) => (
 );
 
 LinkComponent.defaultProps = {
+  label: '',
   href: '/',
 };
 
 LinkComponent.propTypes = {
+  label: PropTypes.string,
   href: PropTypes.string,
 };
 

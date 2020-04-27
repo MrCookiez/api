@@ -4,7 +4,6 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { useForm } from 'react-hook-form';
 
-import Button from '../Button';
 import endpoint from '../../config/endpoint.json';
 import styles from './styles';
 
@@ -12,7 +11,9 @@ const PostForm = ({ className }) => {
   const { register, handleSubmit, errors } = useForm();
   const postURL = `${endpoint.addPost}`;
 
-  const uploadPost = (data) => axios.post(postURL, data).then((res) => console.log(res)).catch((err) => console.log(err));
+  const uploadPost = (data) => (
+    axios.post(postURL, data).then((res) => console.log(res)).catch((err) => console.log(err))
+  );
 
   const onSubmit = (data) => uploadPost(data);
 
@@ -29,7 +30,7 @@ const PostForm = ({ className }) => {
         <textarea name="text" type="text" ref={register({ required: true })} />
 
         {errors.header && <span>This field is required!</span>}
-        <Button label="Submit" type="submit" />
+        <button label="Submit" type="submit">Submit</button>
       </form>
     </div>
   );

@@ -19,15 +19,6 @@ const Post = ({
   </Link>
 );
 
-Post.defaultProps = {
-  data: {
-    title: '',
-    text: '',
-    author: '',
-    date: '',
-  },
-};
-
 Post.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.number.isRequired,

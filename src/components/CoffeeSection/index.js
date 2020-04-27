@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Media from 'react-media';
 import 'styled-components/macro';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import CustomButton from '../Button';
 import { breakpoints } from '../../config/grid';
 import coffeeArtJPG from './img/cappuccino-art.jpg';
 import { ReactComponent as CoffeeCup } from './img/coffee-cup.svg';
@@ -24,7 +24,7 @@ const CoffeeSection = ({ className, data }) => {
                   <h2>{title}</h2>
                   <p>{text}</p>
                 </div>
-                <CustomButton to={to} label={label} />
+                <button type="submit">{label}</button>
               </Grid>
 
               <Grid item xs={12}>
@@ -51,7 +51,7 @@ const CoffeeSection = ({ className, data }) => {
                   <CoffeeBeans width={80} />
                 </div>
 
-                <CustomButton to={to} label={label} />
+                <Link to={to}>{label}</Link>
               </Grid>
             </Grid>
           ))}
@@ -61,8 +61,6 @@ const CoffeeSection = ({ className, data }) => {
 };
 CoffeeSection.defaultProps = {
   className: '',
-  title: '',
-  text: '',
   button: {
     to: '/',
     label: 'default label',
@@ -70,20 +68,19 @@ CoffeeSection.defaultProps = {
 };
 
 CoffeeSection.propTypes = {
-  link: PropTypes.string,
   className: PropTypes.string,
   button: PropTypes.shape({
     to: PropTypes.string,
     label: PropTypes.string,
   }),
-  data: {
+  data: PropTypes.shape({
     title: PropTypes.string,
     text: PropTypes.string,
     button: {
       to: PropTypes.string,
       label: PropTypes.string,
     },
-  },
+  }).isRequired,
 };
 
 export default CoffeeSection;

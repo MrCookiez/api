@@ -10,7 +10,7 @@ const Card = ({
 }) => availability && (
 <form css={styles.wrapper}>
   <div css={styles.container}>
-    <div css={styles.image} bgImage={defaultImgs.burger} alt="product picture" />
+    <div css={styles.image} bgImage={img || defaultImgs.burger} alt="product picture" />
     <div css={styles.body}>
       <div className="product-headline">
         <span className="product-name">{name}</span>
@@ -33,6 +33,7 @@ const Card = ({
 Card.defaultProps = {
   img: '',
   offer: false,
+  availability: true,
 };
 
 Card.propTypes = {

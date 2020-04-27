@@ -7,19 +7,19 @@ const Register = () => (
     <h2>Register page</h2>
     <form method="POST" action={endpoint.register}>
       <br />
-      <label>First name:</label>
+      <label htmlFor="firstname">First name:</label>
       <input type="text" name="firstname" />
       <br />
-      <label>Last name:</label>
+      <label htmlFor="lastname">Last name:</label>
       <input type="text" name="lastname" />
       <br />
-      <label>Email:</label>
+      <label htmlFor="email">Email:</label>
       <input type="email" name="email" />
       <br />
-      <label>Password:</label>
+      <label htmlFor="password">Password:</label>
       <input type="password" name="password" />
       <br />
-      <label>Re-type password</label>
+      <label htmlFor="passwordMatch">Re-type password</label>
       <input type="password" name="passwordMatch" />
       <br />
       <input type="submit" value="Submit" />

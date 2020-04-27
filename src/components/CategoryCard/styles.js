@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import theme from '../../config/theme.json';
-import { minMediaQuery } from '../../config/grid.js';
+import { minMediaQuery } from '../../config/grid';
 
 const boxSizeMobile = '120px';
 const boxSizeTablet = '200px';

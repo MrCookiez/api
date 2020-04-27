@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
 import 'styled-components/macro';
 
@@ -19,6 +20,14 @@ const PostPage = ({ match: { params: { id } } }) => {
       <p>{data.text}</p>
     </Layout>
   );
+};
+
+PostPage.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string,
+    }),
+  }).isRequired,
 };
 
 export default PostPage;
