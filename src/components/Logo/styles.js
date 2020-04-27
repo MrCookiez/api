@@ -10,9 +10,9 @@ export default css`
         font-weight: 500;
         margin-left: ${theme.spacing.xs}px;
 
-        ${({ active }) => active
-            ? `color: ${theme.colors.grayScale.light};`
-            : `color: ${theme.colors.primary.red};`
-        }
+        ${({ active }) => (active
+    ? `color: ${theme.colors.grayScale.light};`
+    : `color: ${theme.colors.primary.red};`)
+}
     }
 `;

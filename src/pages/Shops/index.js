@@ -3,7 +3,7 @@ import Layout from '../../layout/Basic';
 
 const Shops = () => (
   <Layout>
-      KATΑΣΤΗΜΑΤΑ
+    KATΑΣΤΗΜΑΤΑ
   </Layout>
 );
 

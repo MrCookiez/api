@@ -4,9 +4,9 @@ import Logo from '../Logo';
 import styles from './styles';
 
 const Banner = () => (
-    <div css={styles}>
-        <Logo isWhite />
-    </div>
+  <div css={styles}>
+    <Logo isWhite />
+  </div>
 );
 
 export default Banner;

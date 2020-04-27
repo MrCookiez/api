@@ -5,15 +5,15 @@ import Client from './Client';
 import User from './User';
 
 const Profile = ({ type }) => (
-    <>
-        {type === 'admin' && <Admin />}
-        {type === 'client' && <Client />}
-        {type === 'user' && <User />}
-    </>
+  <>
+    {type === 'admin' && <Admin />}
+    {type === 'client' && <Client />}
+    {type === 'user' && <User />}
+  </>
 );
 
 Profile.propTypes = {
-    type: PropTypes.oneOf(['admin', 'client', 'user']).isRequired,
+  type: PropTypes.oneOf(['admin', 'client', 'user']).isRequired,
 };
 
 export default Profile;

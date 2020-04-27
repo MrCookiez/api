@@ -31,7 +31,7 @@ export default css`
         }
 
         ${({ toggle }) => (
-            toggle ? css`
+    toggle ? css`
                 /** status: not visible */
                 :before, :after {
                     display: flex;
@@ -55,7 +55,7 @@ export default css`
                     transform: rotate(-45deg);
                 }
             `
-            : css`
+      : css`
                 /** status: visible */
                 :before {
                     top: 0;
@@ -70,6 +70,6 @@ export default css`
                     bottom: 0;
                 }
             `
-        )}
+  )}
     }
 `;

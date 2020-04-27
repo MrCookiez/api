@@ -1,30 +1,40 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true
-    },
-    "extends": [
-        "parser: babel-eslint",
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "react",
-        "jsx-a11y",
-        "import"
-    ],
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
+  "extends": [
+      "airbnb",
+      "eslint:recommended",
+      "plugin:react/recommended"
+  ],
+  "settings": {
+    "import/relosver": {
+      "alias": [
+        "components",
+        "./src/components"
+      ],
+      "webpack": {
+        "config" : {
+          "resolver": {
+            "extensions": [
+              ".js",
+              "jsx"
+            ]
+          }
+        }
+      }
     }
+  },
+  "globals": {
+    "document": true
+  },
+  "plugins": [
+      "react"
+  ],
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "labelComponents": ["CustomInputLabel"],
+      "labelAttributes": ["label"],
+      "controlComponents": ["CustomInput"],
+      "depth": 3
+    }]
+  }
 }
